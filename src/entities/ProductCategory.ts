@@ -10,8 +10,6 @@ import Faker from "faker";
     fill: function (entity: ProductCategory, faker: typeof Faker) {
         entity.title = faker.company.catchPhrase();
         entity.description = faker.lorem.sentence();
-        // entity.parent = null;
-        // entity.categoryId = 1;
     }
 })
 @Entity()

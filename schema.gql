@@ -120,7 +120,6 @@ type ProductComment {
   content: String!
   user: User!
   product: Product!
-  productId: Int!
 }
 
 type ProductMutation {
