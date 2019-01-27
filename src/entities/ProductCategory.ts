@@ -7,9 +7,12 @@ import Faker from "faker";
 
 @Seed({
     amount: 50,
-    fill: function (entity: ProductCategory, faker: typeof Faker) {
+    fill(entity: ProductCategory, faker: typeof Faker) {
         entity.title = faker.company.catchPhrase();
         entity.description = faker.lorem.sentence();
+    },
+    async after(em) {
+        // await em.query('UPDATE `product_category` set parentId = (SELECT id from product_category ORDER BY RAND() LIMIT 1)');
     }
 })
 @Entity()

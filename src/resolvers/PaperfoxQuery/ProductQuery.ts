@@ -2,8 +2,6 @@ import {Arg, FieldResolver, ObjectType, Resolver} from "type-graphql";
 import {InjectRepository} from "typeorm-typedi-extensions";
 import {Product} from "../../entities/Product";
 import {Repository} from "typeorm";
-import {User} from "../../entities/User";
-import {CtxUser} from "../../helpers";
 import {PaginationArgs} from "../models/types";
 import {ProductCategory} from "../../entities/ProductCategory";
 
@@ -17,14 +15,32 @@ export class ProductQuery {
     }
 
     @FieldResolver(() => [Product])
-    public async all(@CtxUser user: User,
-                     @Arg('pagination', {nullable: true}) pagination: PaginationArgs
-    ) {
-        return await this.products.find({});
+    public async all(@Arg('pagination', {nullable: true}) pagination: PaginationArgs) {
+        let options = pagination ? {
+            ...pagination.skipTakeOptions()
+        } : {};
+        return await this.products.find(options);
     }
 
     @FieldResolver(() => [Product])
-    public async categories() {
-        return await this.categoriesRepo.find({});
+    public async search(
+        @Arg('pagination', {nullable: true}) pagination: PaginationArgs,
+        @Arg('query', {nullable: true}) query: string,
+    ) {
+        query = `%${query}%`;
+        return await this.products
+            .createQueryBuilder('product')
+            .where('product.title like :query OR product.description like :query', {
+                query
+            })
+            .getMany();
+    }
+
+    @FieldResolver(() => [Product])
+    public async categories(@Arg('pagination', {nullable: true}) pagination: PaginationArgs) {
+        let options = pagination ? {
+            ...pagination.skipTakeOptions()
+        } : {};
+        return await this.categoriesRepo.find(options);
     }
 }

@@ -1,25 +1,35 @@
 import {Arg, Authorized, FieldResolver, ObjectType, Resolver} from "type-graphql";
 import {InjectRepository} from "typeorm-typedi-extensions";
-import {Product} from "../../entities/Product";
 import {Repository} from "typeorm";
 import {ProductComment} from "../../entities/ProductComment";
 import {User} from "../../entities/User";
 import {CtxUser} from "../../helpers";
+import {Order} from "../../entities/Order";
+import {PaginationArgs} from "../models/types";
 
 @ObjectType()
 @Resolver(() => MeQuery)
 export class MeQuery {
     constructor(
-        @InjectRepository(Product) private readonly movieRepository: Repository<Product>,
+        @InjectRepository(Order) private readonly orderRepository: Repository<Order>,
         @InjectRepository(ProductComment) private readonly sceneRepository: Repository<ProductComment>
     ) {
     }
 
     @Authorized()
-    @FieldResolver(() => Product)
-    public async movie(@CtxUser user: User,
-                       @Arg('id') id: number
+    @FieldResolver(() => [Order])
+    public async orders(
+        @CtxUser me: User,
+        @Arg('pagination', {nullable: true}) pagination: PaginationArgs
     ) {
-        return {};
+        let options = pagination ? {
+            ...pagination.skipTakeOptions()
+        } : {};
+        return await this.orderRepository.find({
+            ...options,
+            where: {
+                userId: me.id
+            },
+        });
     }
 }

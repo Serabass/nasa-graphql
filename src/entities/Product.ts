@@ -8,11 +8,14 @@ import Faker from "faker";
 
 @Seed({
     amount: 50,
-    fill: function (entity: Product, faker: typeof Faker) {
+    fill(entity: Product, faker: typeof Faker) {
         entity.title = faker.company.catchPhrase();
         entity.description = faker.lorem.sentence();
         entity.price = faker.random.number(10000);
-        // entity.categoryId = 1;
+    },
+    async after(em) {
+        await em.query('UPDATE `product` set categoryId = (SELECT id from product_category ORDER BY RAND() LIMIT 1)');
+
     }
 })
 @Entity()

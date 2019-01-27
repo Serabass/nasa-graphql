@@ -22,15 +22,9 @@ import Seed from "../../decorators/seed";
         let users = (await factory(model)().makeMany(SEED_METADATA.amount));
         for (let user of users) {
             await em.save(user);
+            SEED_METADATA.after && await SEED_METADATA.after(em);
         }
 
-        await em.query('UPDATE cart_item set productId = (SELECT id from product ORDER BY RAND() LIMIT 1)');
-        await em.query('UPDATE cart_item set cartId = (SELECT id from cart ORDER BY RAND() LIMIT 1)');
-        await em.query('UPDATE `order` set userId = (SELECT id from user ORDER BY RAND() LIMIT 1)');
-        await em.query('UPDATE `product` set categoryId = (SELECT id from product_category ORDER BY RAND() LIMIT 1)');
-        // await em.query('UPDATE `product_category` set parentId = (SELECT id from product_category ORDER BY RAND() LIMIT 1)');
-        await em.query('UPDATE `product_comment` set userId = (SELECT id from user ORDER BY RAND() LIMIT 1)');
-        await em.query('UPDATE `product_comment` set productId = (SELECT id from product ORDER BY RAND() LIMIT 1)');
     }
 
     process.exit();

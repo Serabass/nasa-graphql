@@ -18,8 +18,13 @@ import Faker from "faker";
 
 @Seed({
     amount: 50,
-    fill: function (entity: CartItem, faker: typeof Faker) {
+    fill(entity: CartItem, faker: typeof Faker) {
         entity.count = faker.random.number(90)
+    },
+    async after(em) {
+        await em.query('UPDATE cart_item set productId = (SELECT id from product ORDER BY RAND() LIMIT 1)');
+        await em.query('UPDATE cart_item set cartId = (SELECT id from cart ORDER BY RAND() LIMIT 1)');
+
     }
 })
 @Entity()

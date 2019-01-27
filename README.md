@@ -1,3 +1,6 @@
+# Пример проекта с использованием Typescript, GraphQL, TypeGraphQL, TypeORM
+
+
 # GraphQL Typescript Boilerplate
 
 I've been playing around with various GraphQL boilerplates like Vesper, rolled my own with [Prisma](https://github.com/prisma/prisma), built on NestJS. I either found them too opinionated, or too verbose. I liked what [Vesper](https://github.com/vesper-framework/vesper) and [NestJS](https://github.com/nestjs/nest) offered but found them having a lot of duplication.\*

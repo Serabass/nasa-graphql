@@ -5,12 +5,13 @@ import {Repository} from "typeorm";
 import {ProductComment} from "../../entities/ProductComment";
 import {User} from "../../entities/User";
 import {CtxUser} from "../../helpers";
+import {Cart} from "../../entities/Cart";
 
 @ObjectType()
 @Resolver(() => CartQuery)
 export class CartQuery {
     constructor(
-        @InjectRepository(Product) private readonly movieRepository: Repository<Product>,
+        @InjectRepository(Cart) private readonly cartRepo: Repository<Cart>,
         @InjectRepository(ProductComment) private readonly sceneRepository: Repository<ProductComment>
     ) {
     }
@@ -20,13 +21,6 @@ export class CartQuery {
     public async getCart(@CtxUser user: User,
                          @Arg('id') id: number
     ) {
-        let movie = await this.movieRepository.findOne({id}, {
-            relations: [
-                'scenes',
-                'project'
-            ],
-        });
-
-        return movie;
+        return await this.cartRepo.findOne({id}, {});
     }
 }

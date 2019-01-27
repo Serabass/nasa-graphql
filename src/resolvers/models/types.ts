@@ -1,5 +1,4 @@
 import {InputType, Field, ObjectType} from 'type-graphql';
-import {CartItem} from "../../entities/CartItem";
 
 @ObjectType()
 export class AuthPayload {
@@ -10,10 +9,15 @@ export class AuthPayload {
 
 @InputType()
 export class PaginationArgs {
-    @Field() firstName: string;
-    @Field() lastName: string;
-    @Field() password: string;
-    @Field() email: string;
+    @Field() page: number;
+    @Field() perPage: number;
+
+    skipTakeOptions(): any {
+        return {
+            skip: (this.page - 1) * this.perPage,
+            take: this.perPage
+        }
+    }
 }
 
 @InputType()

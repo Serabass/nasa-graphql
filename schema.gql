@@ -42,7 +42,7 @@ type CartQuery {
 scalar DateTime
 
 type MeQuery {
-  movie(id: Float!): Product!
+  orders(pagination: PaginationArgs): [Order!]!
 }
 
 type Mutation {
@@ -64,10 +64,8 @@ type Order {
 }
 
 input PaginationArgs {
-  firstName: String!
-  lastName: String!
-  password: String!
-  email: String!
+  page: Float!
+  perPage: Float!
 }
 
 type PaperfoxMutation {
@@ -116,7 +114,7 @@ type ProductCategory {
 }
 
 type ProductComment {
-  id: Float!
+  id: ID!
   content: String!
   user: User!
   product: Product!
@@ -129,7 +127,8 @@ type ProductMutation {
 
 type ProductQuery {
   all(pagination: PaginationArgs): [Product!]!
-  categories: [Product!]!
+  search(query: String, pagination: PaginationArgs): [Product!]!
+  categories(pagination: PaginationArgs): [Product!]!
 }
 
 type Query {

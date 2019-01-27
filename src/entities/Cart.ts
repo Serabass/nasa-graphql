@@ -11,8 +11,10 @@ import Faker from "faker";
 
 @Seed({
     amount: 50,
-    fill: function (entity: Cart, faker: typeof Faker) {
+    fill(entity: Cart, faker: typeof Faker) {
         entity.sum = faker.random.number(90000);
+    },
+    async after(em) {
     }
 })
 @Entity()

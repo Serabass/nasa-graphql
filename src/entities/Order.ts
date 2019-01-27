@@ -17,10 +17,13 @@ import Faker from "faker";
 
 @Seed({
     amount: 50,
-    fill: function (entity: Order, faker: typeof Faker) {
+    fill(entity: Order, faker: typeof Faker) {
         entity.description = faker.lorem.sentence();
         entity.title = faker.lorem.word();
-        entity.userId = 1;
+    },
+    async after(em) {
+        await em.query('UPDATE `order` set userId = (SELECT id from user ORDER BY RAND() LIMIT 1)');
+
     }
 })
 @Entity()
