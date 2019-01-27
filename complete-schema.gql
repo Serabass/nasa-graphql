@@ -1,0 +1,156 @@
+
+type Query {
+    Paperfox: PaperfoxQuery
+}
+
+type Mutation {
+    Paperfox: PaperfoxMutation
+    Auth: AuthMutation
+}
+
+schema {
+    query: Query
+    mutation: Mutation
+}
+
+type PaperfoxQuery {
+    Products: ProductQuery
+    Me: MeQuery
+    Cart: CartQuery
+}
+
+enum OrderSelectType {
+    All
+    Past
+    Active
+}
+
+type MeQuery {
+    Orders(type: OrderSelectType = All): [Order]
+    Info: User
+}
+
+type MeMutation {
+    deleteOrder(orderId: Int!): Boolean
+    updateInfo(info: User): User
+}
+
+type PaperfoxMutation {
+    Product: ProductMutation
+    # Category: CategoryMutation
+    Me: MeMutation
+    Cart: CartMutation
+}
+
+type CartItem {
+    product: Product!
+    count: Int!
+}
+
+type Cart {
+    items: [CartItem]
+    sum: Float
+}
+
+input CartArgs {
+    items: [CartItem]
+}
+
+type CartQuery {
+    getCart: Cart
+}
+
+type CartMutation {
+    addProduct(productId: Int!): Cart
+}
+
+type ProductMutation {
+    createOrder(cart: CartArgs): Order
+    buy(order: Order): Boolean # or what?
+}
+
+type ProductResult {
+    totalCount: Int!
+    page: Int!
+    hasNextPage: Boolean!
+    hasPrevPage: Boolean!
+    result: [Product]!
+}
+
+input PaginationArgs {
+    page: Int = 1
+    perPage: Int = 20
+}
+
+type ProductQuery {
+    all(pagination: PaginationArgs): ProductResult!
+    categories: [Category]
+}
+
+type Product {
+    id: ID!
+    title: String!
+    description: String!
+    images: [String]
+    category: ProductCategory!
+    price: Float!
+}
+
+type ProductComment {
+    id: ID!
+    content: String!
+    user: User!
+    product: Product!
+    visible: Boolean
+}
+
+type Order {
+    id: ID!
+    products: [Product!]!
+    sum: Float!
+    comment: String
+    user: User # if anonymous user creating order, we must register him and return his info here
+}
+
+type ProductCategory {
+    id: ID!
+    title: String!
+    products: [Product]
+    parent: ProductCategory
+    children: [ProductCategory]
+}
+
+# TODO Add social account schema
+type User {
+    id: ID!
+    firstName: String!
+    middleName: String!
+    lastName: String!
+    email: String
+    password: String
+
+    orders: [Order]
+    comments: [ProductComment]
+}
+
+type SignInArgs {
+    email: String!
+    password: String!
+}
+
+type SignUpArgs {
+    firstName: String!
+    middleName: String!
+    lastName: String!
+    password: String!
+    email: String!
+}
+
+type AuthPayload {
+    token: String!
+}
+
+type AuthMutation {
+    SignUp(input: SignUpArgs!): AuthPayload!
+    SignIn(input: SignInArgs!): AuthPayload!
+}
