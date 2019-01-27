@@ -1,10 +1,11 @@
 import {Entity, PrimaryGeneratedColumn, Column, ManyToOne, OneToMany, JoinTable} from 'typeorm';
 import {Order} from "./Order";
-import {Field, ObjectType} from "type-graphql";
+import {Field, FieldResolver, ObjectType, Resolver} from "type-graphql";
 import {ProductCategory} from "./ProductCategory";
 import {ProductComment} from "./ProductComment";
 import Seed from "../decorators/seed";
 import Faker from "faker";
+import {ProductRating} from "./ProductRating";
 
 @Seed({
     amount: 50,
@@ -53,9 +54,28 @@ export class Product {
     @OneToMany(type => ProductComment, comment => comment.user)
     comments: ProductComment[];
 
+    @Field(type => [ProductRating])
+    @OneToMany(type => ProductRating, rating => rating.product)
+    ratings: ProductRating[];
+
     @Column()
     @Field({
         description: 'Product price'
     })
     price: number;
+}
+
+@Resolver(Product)
+export class ProductResolvers {
+    @FieldResolver(type => [String])
+    public images() : string[] {
+        let result = [];
+        let count = Math.floor(Math.random() * 10);
+
+        for (let i = 0; i < count; i++) {
+            result.push('https://dummyimage.com/600x400/000/fff.png');
+        }
+
+        return result;
+    }
 }

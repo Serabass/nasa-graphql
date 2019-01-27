@@ -5,6 +5,7 @@ import {Field, ObjectType} from "type-graphql";
 import {ProductComment} from "./ProductComment";
 import Faker from "faker";
 import Seed from "../decorators/seed";
+import {ProductRating} from "./ProductRating";
 
 @Seed({
     amount: 50,
@@ -13,13 +14,12 @@ import Seed from "../decorators/seed";
         const firstName = faker.name.firstName(gender);
         const middleName = faker.name.firstName(gender);
         const lastName = faker.name.lastName(gender);
-        const email = faker.internet.email(firstName, lastName);
 
         entity.firstName = firstName;
         entity.middleName = middleName;
         entity.lastName = lastName;
         entity.password = '123456';
-        entity.email = email;
+        entity.email = faker.internet.email(firstName, lastName);
     }
 })
 @Entity()
@@ -56,6 +56,10 @@ export class User {
     @Field(type => [Order])
     @OneToMany(type => Order, order => order.user)
     orders: Order[];
+
+    @Field(type => [ProductRating])
+    @OneToMany(type => ProductRating, rating => rating.product)
+    ratings: ProductRating[];
 
     @BeforeInsert()
     async hashPassword() {

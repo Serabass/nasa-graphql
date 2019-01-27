@@ -32,6 +32,13 @@ export class CartArgs {
 }
 
 @InputType()
+export class FeedbackInfoArgs {
+    @Field() email: string;
+    @Field() phone: string;
+    @Field() content: string;
+}
+
+@InputType()
 export class SignUpArgs {
     @Field() firstName: string;
     @Field() lastName: string;

@@ -23,9 +23,8 @@ export class ProductQuery {
     }
 
     @FieldResolver(() => [Product])
-    public async search(
-        @Arg('pagination', {nullable: true}) pagination: PaginationArgs,
-        @Arg('query', {nullable: true}) query: string,
+    public async search(@Arg('pagination', {nullable: true}) pagination: PaginationArgs,
+                        @Arg('query', {nullable: true}) query: string,
     ) {
         query = `%${query}%`;
         return await this.products

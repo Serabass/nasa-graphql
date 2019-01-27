@@ -10,8 +10,6 @@ import {
 } from 'typeorm';
 import {User} from './User';
 import {Product} from "./Product";
-import {RelationColumn} from "../helpers";
-import {GraphQLInt} from "graphql";
 import Seed from "../decorators/seed";
 import Faker from "faker";
 
@@ -48,10 +46,6 @@ export class Order {
     @ManyToOne(type => User, user => user.orders)
     @JoinColumn()
     public user: User;
-
-    @Field(type => GraphQLInt, {nullable: true})
-    @RelationColumn({nullable: false})
-    public userId: number;
 
     @Field(type => [Product], {nullable: false})
     @OneToMany(type => Product, product => product.category)

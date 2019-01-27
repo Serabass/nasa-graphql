@@ -18,9 +18,8 @@ export class MeQuery {
 
     @Authorized()
     @FieldResolver(() => [Order])
-    public async orders(
-        @CtxUser me: User,
-        @Arg('pagination', {nullable: true}) pagination: PaginationArgs
+    public async orders(@CtxUser me: User,
+                        @Arg('pagination', {nullable: true}) pagination: PaginationArgs
     ) {
         let options = pagination ? {
             ...pagination.skipTakeOptions()

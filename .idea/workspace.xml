@@ -2,17 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0958b9d0-cad8-467c-ad6f-52de88a13a1a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/entities/Feedback.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/entities/ProductRating.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/resolvers/PaperfoxMutation/FeedbackMutation.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/schema.gql" beforeDir="false" afterPath="$PROJECT_DIR$/schema.gql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entities/Cart.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/Cart.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entities/CartItem.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/CartItem.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/entities/Order.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/Order.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/entities/Product.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/Product.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entities/ProductCategory.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/ProductCategory.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entities/ProductComment.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/ProductComment.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entities/seeds/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/seeds/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/PaperfoxQuery/CartQuery.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/PaperfoxQuery/CartQuery.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entities/User.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/User.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/PaperfoxMutation/ProductMutation.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/PaperfoxMutation/ProductMutation.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/PaperfoxMutation/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/PaperfoxMutation/index.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/resolvers/PaperfoxQuery/MeQuery.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/PaperfoxQuery/MeQuery.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/resolvers/PaperfoxQuery/ProductQuery.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/PaperfoxQuery/ProductQuery.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/resolvers/models/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/models/types.ts" afterDir="false" />
@@ -58,8 +57,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/entities/User.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-536">
-              <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+            <state relative-caret-position="664">
+              <caret line="62" lean-forward="true" selection-start-line="62" selection-end-line="62" />
               <folding>
                 <element signature="e#0#88#0" expanded="true" />
               </folding>
@@ -70,35 +69,86 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/entities/CartItem.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
+            <state relative-caret-position="-330">
               <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/decorators/seed.ts">
+        <entry file="file://$PROJECT_DIR$/src/entities/Product.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="17" column="4" selection-start-line="17" selection-start-column="4" selection-end-line="19" selection-end-column="4" />
+              <folding>
+                <element signature="e#0#96#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/entities/Order.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="214">
+              <caret line="50" lean-forward="true" selection-start-line="50" selection-end-line="50" />
+              <folding>
+                <element signature="e#0#47#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/entities/ProductComment.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="399">
+              <caret line="35" lean-forward="true" selection-start-line="35" selection-end-line="38" selection-end-column="21" />
+              <folding>
+                <element signature="e#0#74#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/entities/Cart.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1050">
+              <caret line="38" lean-forward="true" selection-start-line="38" selection-end-line="38" />
+              <folding>
+                <element signature="e#0#47#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/entities/Feedback.ts">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="30">
-              <caret line="1" selection-start-line="1" selection-end-line="1" />
+              <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/services/JWT.ts">
+        <entry file="file://$PROJECT_DIR$/src/entities/ProductRating.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="14" selection-start-line="14" selection-end-line="14" />
+            <state relative-caret-position="334">
+              <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
+              <folding>
+                <element signature="e#0#47#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/resolvers/PaperfoxQuery/index.ts">
+        <entry file="file://$PROJECT_DIR$/src/resolvers/PaperfoxMutation/index.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="737">
-              <caret line="30" selection-start-line="30" selection-end-line="30" />
+            <state relative-caret-position="480">
+              <caret line="17" column="35" selection-start-line="17" selection-start-column="35" selection-end-line="17" selection-end-column="35" />
               <folding>
                 <element signature="e#0#76#0" expanded="true" />
               </folding>
@@ -107,49 +157,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/resolvers/PaperfoxQuery/CartQuery.ts">
+        <entry file="file://$PROJECT_DIR$/src/resolvers/PaperfoxMutation/FeedbackMutation.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="484">
-              <caret line="23" column="53" selection-start-line="23" selection-start-column="53" selection-end-line="23" selection-end-column="53" />
-              <folding>
-                <element signature="e#0#82#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/resolvers/PaperfoxQuery/MeQuery.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="454">
-              <caret line="27" column="13" selection-start-line="27" selection-start-column="13" selection-end-line="27" selection-end-column="13" />
-              <folding>
-                <element signature="e#0#82#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/resolvers/PaperfoxQuery/ProductQuery.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="6" selection-start-line="6" selection-end-line="6" />
-              <folding>
-                <element signature="e#0#70#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/entities/seeds/index.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="437">
-              <caret line="19" selection-start-line="19" selection-end-line="19" />
-              <folding>
-                <element signature="e#0#48#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="420">
+              <caret line="20" column="42" selection-start-line="20" selection-start-column="38" selection-end-line="20" selection-end-column="42" />
             </state>
           </provider>
         </entry>
@@ -183,6 +194,7 @@
       <find>ProductQuery</find>
       <find>type ProductComment</find>
       <find>comparePassword</find>
+      <find>.email</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -203,28 +215,31 @@
         <option value="$PROJECT_DIR$/src/entities/Scene.ts" />
         <option value="$PROJECT_DIR$/src/db.ts" />
         <option value="$PROJECT_DIR$/src/resolvers/PaperfoxMutation/ProjectsQuery.ts" />
-        <option value="$PROJECT_DIR$/src/resolvers/PaperfoxMutation/index.ts" />
         <option value="$PROJECT_DIR$/src/resolvers/models/Auth.ts" />
         <option value="$PROJECT_DIR$/complete-schema.gql" />
-        <option value="$PROJECT_DIR$/src/resolvers/PaperfoxMutation/ProductMutation.ts" />
         <option value="$PROJECT_DIR$/src/entities/seeds/User.ts" />
         <option value="$PROJECT_DIR$/src/decorators/seed.ts" />
         <option value="$PROJECT_DIR$/src/index.ts" />
         <option value="$PROJECT_DIR$/src/entities/seeds/index.ts" />
         <option value="$PROJECT_DIR$/src/entities/CartItem.ts" />
         <option value="$PROJECT_DIR$/src/entities/Cart.ts" />
-        <option value="$PROJECT_DIR$/src/entities/Order.ts" />
-        <option value="$PROJECT_DIR$/src/entities/Product.ts" />
         <option value="$PROJECT_DIR$/src/entities/ProductCategory.ts" />
         <option value="$PROJECT_DIR$/src/entities/ProductComment.ts" />
-        <option value="$PROJECT_DIR$/src/entities/User.ts" />
-        <option value="$PROJECT_DIR$/src/resolvers/models/types.ts" />
         <option value="$PROJECT_DIR$/src/resolvers/PaperfoxQuery/index.ts" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/src/resolvers/Root.ts" />
-        <option value="$PROJECT_DIR$/src/resolvers/PaperfoxQuery/ProductQuery.ts" />
         <option value="$PROJECT_DIR$/src/resolvers/PaperfoxQuery/CartQuery.ts" />
+        <option value="$PROJECT_DIR$/src/resolvers/PaperfoxMutation/ProductMutation.ts" />
         <option value="$PROJECT_DIR$/src/resolvers/PaperfoxQuery/MeQuery.ts" />
+        <option value="$PROJECT_DIR$/src/resolvers/PaperfoxQuery/ProductQuery.ts" />
+        <option value="$PROJECT_DIR$/src/resolvers/models/types.ts" />
+        <option value="$PROJECT_DIR$/src/resolvers/PaperfoxMutation/index.ts" />
+        <option value="$PROJECT_DIR$/src/resolvers/PaperfoxMutation/FeedbackMutation.ts" />
+        <option value="$PROJECT_DIR$/src/entities/Feedback.ts" />
+        <option value="$PROJECT_DIR$/src/entities/Product.ts" />
+        <option value="$PROJECT_DIR$/src/entities/User.ts" />
+        <option value="$PROJECT_DIR$/src/entities/ProductRating.ts" />
+        <option value="$PROJECT_DIR$/src/entities/Order.ts" />
       </list>
     </option>
   </component>
@@ -258,19 +273,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="entities" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="paperfox-node-graphql" type="b2602c69:ProjectViewProjectNode" />
-              <item name="paperfox-node-graphql" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="entities" type="462c0819:PsiDirectoryNode" />
-              <item name="seeds" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="paperfox-node-graphql" type="b2602c69:ProjectViewProjectNode" />
-              <item name="paperfox-node-graphql" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="services" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -293,6 +295,7 @@
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\_dev\php\paperfox\paperfox-node-graphql\src\entities" />
+      <recent name="D:\_dev\php\paperfox\paperfox-node-graphql\src\resolvers\PaperfoxMutation" />
       <recent name="D:\_dev\php\paperfox\paperfox-node-graphql\src\resolvers\models" />
       <recent name="D:\_dev\php\paperfox\paperfox-node-graphql\src\resolvers\PaperfoxQuery" />
       <recent name="D:\_dev\php\paperfox\paperfox-node-graphql\src\resolvers" />
@@ -310,7 +313,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="npm.dev">
+  <component name="RunManager" selected="Node.js.Seed">
     <configuration name="Debug" type="NodeJSConfigurationType" node-parameters="-r ts-node/register" path-to-js-file="src/index.ts" working-dir="$PROJECT_DIR$">
       <method v="2" />
     </configuration>
@@ -345,7 +348,7 @@
       <updated>1548616236725</updated>
       <workItem from="1548616238307" duration="9619000" />
       <workItem from="1548625879519" duration="162000" />
-      <workItem from="1548626254312" duration="4954000" />
+      <workItem from="1548626254312" duration="7058000" />
     </task>
     <task id="LOCAL-00001" summary="upd">
       <created>1548627226462</created>
@@ -361,11 +364,18 @@
       <option name="project" value="LOCAL" />
       <updated>1548627518302</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="upd">
+      <created>1548631284008</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1548631284008</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14735000" />
+    <option name="totallyTimeSpent" value="16839000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -415,31 +425,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../paperfox-backend/database/migrations/2018_04_21_143812_create_carts_table.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../paperfox-backend/database/migrations/2018_04_26_155409_add_parent_id_to_categories.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-233" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../paperfox-backend/database/migrations/2018_05_16_162741_create_jobs_table.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../paperfox-backend/database/migrations/2018_05_16_163448_sandbox_table.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../paperfox-backend/database/migrations/2018_05_28_114101_create_roles_table.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../paperfox-backend/database/migrations/2018_07_20_205039_create_shoppingcart_table.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../paperfox-backend/database/migrations/2018_07_15_041551_create_comments_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-90" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../paperfox-backend/database/migrations/2018_07_15_041916_add_visible_field_to_comments.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -461,26 +446,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="577">
           <caret line="33" lean-forward="true" selection-start-line="33" selection-end-line="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/resolvers/PaperfoxMutation/index.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
-          <folding>
-            <element signature="e#0#76#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/resolvers/PaperfoxMutation/ProductMutation.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="12" column="65" selection-start-line="12" selection-start-column="65" selection-end-line="12" selection-end-column="65" />
-          <folding>
-            <element signature="e#0#93#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -591,50 +556,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/entities/Cart.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="930">
-          <caret line="38" lean-forward="true" selection-start-line="38" selection-end-line="38" />
-          <folding>
-            <element signature="e#0#47#0" expanded="true" />
-            <element signature="e#262#415#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/entities/Order.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-686">
-          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
-          <folding>
-            <element signature="e#0#47#0" expanded="true" />
-            <element signature="e#439#648#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/entities/Product.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="134">
-          <caret line="8" column="6" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
-          <folding>
-            <element signature="e#0#96#0" expanded="true" />
-            <element signature="e#349#620#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/entities/ProductComment.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-26">
-          <caret line="9" column="6" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
-          <folding>
-            <element signature="e#0#74#0" expanded="true" />
-            <element signature="e#296#526#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
@@ -681,26 +602,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/resolvers/Root.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
-          <folding>
-            <element signature="e#0#50#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/resolvers/PaperfoxQuery/ProductQuery.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="6" selection-start-line="6" selection-end-line="6" />
-          <folding>
-            <element signature="e#0#70#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/decorators/seed.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
@@ -715,23 +616,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/resolvers/PaperfoxQuery/index.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="737">
-          <caret line="30" selection-start-line="30" selection-end-line="30" />
-          <folding>
-            <element signature="e#0#76#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/resolvers/PaperfoxQuery/CartQuery.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="484">
-          <caret line="23" column="53" selection-start-line="23" selection-start-column="53" selection-end-line="23" selection-end-column="53" />
-          <folding>
-            <element signature="e#0#82#0" expanded="true" />
-          </folding>
+    <entry file="das://462f2a78-1cec-4ec0-9387-bff60639f9b7/schema/paperfox/table/user">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
@@ -745,43 +633,188 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://462f2a78-1cec-4ec0-9387-bff60639f9b7/schema/paperfox/table/user">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
+    <entry file="file://$PROJECT_DIR$/src/resolvers/PaperfoxQuery/index.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="900">
+          <caret line="30" selection-start-line="30" selection-end-line="30" />
+          <folding>
+            <element signature="e#0#76#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/entities/User.ts">
+    <entry file="file://$PROJECT_DIR$/node_modules/typeorm/common/DeepPartial.d.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-536">
-          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+        <state relative-caret-position="90">
+          <caret line="3" column="20" selection-start-line="3" selection-start-column="20" selection-end-line="3" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/typeorm/repository/Repository.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="145">
+          <caret line="59" column="36" selection-start-line="59" selection-start-column="36" selection-end-line="59" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resolvers/PaperfoxQuery/CartQuery.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="484">
+          <caret line="23" column="53" selection-start-line="23" selection-start-column="53" selection-end-line="23" selection-end-column="53" />
           <folding>
-            <element signature="e#0#88#0" expanded="true" />
+            <element signature="e#0#82#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resolvers/PaperfoxQuery/ProductQuery.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-81">
+          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+          <folding>
+            <element signature="e#0#70#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resolvers/PaperfoxQuery/MeQuery.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="334">
+          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+          <folding>
+            <element signature="e#0#82#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/type-graphql/decorators/types.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="15" column="1" lean-forward="true" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/type-graphql/decorators/FieldResolver.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="4" column="13" lean-forward="true" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resolvers/PaperfoxMutation/ProductMutation.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="347">
+          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+          <folding>
+            <element signature="e#0#93#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resolvers/Root.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="317">
+          <caret line="14" column="27" selection-start-line="14" selection-start-column="27" selection-end-line="14" selection-end-column="27" />
+          <folding>
+            <element signature="e#0#50#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resolvers/models/types.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="415">
+          <caret line="37" column="29" lean-forward="true" selection-start-line="37" selection-start-column="29" selection-end-line="37" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resolvers/PaperfoxMutation/index.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="17" column="35" selection-start-line="17" selection-start-column="35" selection-end-line="17" selection-end-column="35" />
+          <folding>
+            <element signature="e#0#76#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resolvers/PaperfoxMutation/FeedbackMutation.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="20" column="42" selection-start-line="20" selection-start-column="38" selection-end-line="20" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/entities/Cart.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1050">
+          <caret line="38" lean-forward="true" selection-start-line="38" selection-end-line="38" />
+          <folding>
+            <element signature="e#0#47#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/entities/CartItem.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
+        <state relative-caret-position="-330">
           <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/resolvers/models/types.ts">
+    <entry file="file://$PROJECT_DIR$/src/entities/ProductComment.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="265">
-          <caret line="14" column="4" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="4" />
+        <state relative-caret-position="399">
+          <caret line="35" lean-forward="true" selection-start-line="35" selection-end-line="38" selection-end-column="21" />
+          <folding>
+            <element signature="e#0#74#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/resolvers/PaperfoxQuery/MeQuery.ts">
+    <entry file="file://$PROJECT_DIR$/src/entities/User.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="454">
-          <caret line="27" column="13" selection-start-line="27" selection-start-column="13" selection-end-line="27" selection-end-column="13" />
+        <state relative-caret-position="664">
+          <caret line="62" lean-forward="true" selection-start-line="62" selection-end-line="62" />
           <folding>
-            <element signature="e#0#82#0" expanded="true" />
+            <element signature="e#0#88#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/entities/Product.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="17" column="4" selection-start-line="17" selection-start-column="4" selection-end-line="19" selection-end-column="4" />
+          <folding>
+            <element signature="e#0#96#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/entities/ProductRating.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="334">
+          <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
+          <folding>
+            <element signature="e#0#47#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/entities/Feedback.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/entities/Order.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="214">
+          <caret line="50" lean-forward="true" selection-start-line="50" selection-end-line="50" />
+          <folding>
+            <element signature="e#0#47#0" expanded="true" />
           </folding>
         </state>
       </provider>

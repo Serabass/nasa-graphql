@@ -41,6 +41,24 @@ type CartQuery {
 # The javascript `Date` as string. Type represents date and time as the ISO Date string.
 scalar DateTime
 
+type Feedback {
+  id: Float
+  fullName: String
+  email: String
+  phone: String
+  content: String
+}
+
+input FeedbackInfoArgs {
+  email: String!
+  phone: String!
+  content: String!
+}
+
+type FeedbackMutation {
+  submit(feedbackInfo: FeedbackInfoArgs!): [Order!]!
+}
+
 type MeQuery {
   orders(pagination: PaginationArgs): [Order!]!
 }
@@ -55,7 +73,6 @@ type Order {
   title: String
   description: String
   user: User
-  userId: Int
   products: [Product!]!
 
   # Date Time the order was created
@@ -70,6 +87,7 @@ input PaginationArgs {
 
 type PaperfoxMutation {
   Product: ProductMutation!
+  Feedback: FeedbackMutation!
 }
 
 type PaperfoxQuery {
@@ -91,9 +109,11 @@ type Product {
   # Associated category
   category: Order!
   comments: [ProductComment!]!
+  ratings: [ProductRating!]!
 
   # Product price
   price: Float!
+  images: [String!]!
 }
 
 type ProductCategory {
@@ -122,13 +142,19 @@ type ProductComment {
 
 type ProductMutation {
   createOrder(cart: CartArgs!): [Order!]!
-  my(perPage: Float, page: Float): [Order!]!
 }
 
 type ProductQuery {
   all(pagination: PaginationArgs): [Product!]!
   search(query: String, pagination: PaginationArgs): [Product!]!
   categories(pagination: PaginationArgs): [Product!]!
+}
+
+type ProductRating {
+  id: Float
+  product: Product!
+  user: User!
+  value: Float
 }
 
 type Query {
@@ -156,4 +182,5 @@ type User {
   password: String!
   comments: [ProductComment!]!
   orders: [Order!]!
+  ratings: [ProductRating!]!
 }

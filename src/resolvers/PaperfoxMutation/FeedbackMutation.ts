@@ -4,11 +4,11 @@ import {Order} from "../../entities/Order";
 import {Repository} from "typeorm";
 import {User} from "../../entities/User";
 import {Cart} from "../../entities/Cart";
-import {CartArgs} from "../models/types";
+import {CartArgs, FeedbackInfoArgs} from "../models/types";
 
 @ObjectType()
-@Resolver(() => ProductMutation)
-export class ProductMutation {
+@Resolver(() => FeedbackMutation)
+export class FeedbackMutation {
     constructor(
         @InjectRepository(Order) private readonly orderRepository: Repository<Order>,
     ) {
@@ -16,9 +16,9 @@ export class ProductMutation {
 
     @Authorized()
     @FieldResolver(type => [Order])
-    async createOrder(@Root() projectsQuery: ProductMutation,
-                      @Ctx() ctx,
-                      @Arg('cart') cart: CartArgs): Promise<Order[]> {
-        return this.orderRepository.find();
+    async submit(@Root() projectsQuery: FeedbackMutation,
+                 @Ctx() ctx,
+                 @Arg('feedbackInfo') cart: FeedbackInfoArgs): Promise<Order[]> {
+        return <any>{};
     }
 }
