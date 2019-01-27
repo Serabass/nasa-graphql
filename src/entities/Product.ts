@@ -3,7 +3,18 @@ import {Order} from "./Order";
 import {Field, ObjectType} from "type-graphql";
 import {ProductCategory} from "./ProductCategory";
 import {ProductComment} from "./ProductComment";
+import Seed from "../decorators/seed";
+import Faker from "faker";
 
+@Seed({
+    amount: 50,
+    fill: function (entity: Product, faker: typeof Faker) {
+        entity.title = faker.company.catchPhrase();
+        entity.description = faker.lorem.sentence();
+        entity.price = faker.random.number(10000);
+        // entity.categoryId = 1;
+    }
+})
 @Entity()
 @ObjectType()
 export class Product {
@@ -30,6 +41,10 @@ export class Product {
     })
     @ManyToOne(type => ProductCategory, category => category.products)
     category: ProductCategory;
+
+    // @Field(type => GraphQLInt, {nullable: true})
+    // @RelationColumn({nullable: true})
+    // public categoryId: number;
 
     @Field(type => [ProductComment])
     @OneToMany(type => ProductComment, comment => comment.user)

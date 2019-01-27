@@ -13,7 +13,15 @@ import {Product} from "./Product";
 import {RelationColumn} from "../helpers";
 import {GraphQLInt} from "graphql";
 import {Cart} from "./Cart";
+import Seed from "../decorators/seed";
+import Faker from "faker";
 
+@Seed({
+    amount: 50,
+    fill: function (entity: CartItem, faker: typeof Faker) {
+        entity.count = faker.random.number(90)
+    }
+})
 @Entity()
 @ObjectType()
 export class CartItem {

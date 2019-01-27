@@ -3,7 +3,25 @@ import * as bcrypt from 'bcryptjs';
 import {Order} from "./Order";
 import {Field, ObjectType} from "type-graphql";
 import {ProductComment} from "./ProductComment";
+import Faker from "faker";
+import Seed from "../decorators/seed";
 
+@Seed({
+    amount: 50,
+    fill: function (entity: User, faker: typeof Faker) {
+        const gender = faker.random.number(1);
+        const firstName = faker.name.firstName(gender);
+        const middleName = faker.name.firstName(gender);
+        const lastName = faker.name.lastName(gender);
+        const email = faker.internet.email(firstName, lastName);
+
+        entity.firstName = firstName;
+        entity.middleName = middleName;
+        entity.lastName = lastName;
+        entity.password = '123456';
+        entity.email = email;
+    }
+})
 @Entity()
 @ObjectType()
 export class User {

@@ -2,7 +2,18 @@ import {Entity, PrimaryGeneratedColumn, Column, ManyToOne, OneToMany} from 'type
 import {Order} from "./Order";
 import {Field, ObjectType} from "type-graphql";
 import {Product} from "./Product";
+import Seed from "../decorators/seed";
+import Faker from "faker";
 
+@Seed({
+    amount: 50,
+    fill: function (entity: ProductCategory, faker: typeof Faker) {
+        entity.title = faker.company.catchPhrase();
+        entity.description = faker.lorem.sentence();
+        // entity.parent = null;
+        // entity.categoryId = 1;
+    }
+})
 @Entity()
 @ObjectType()
 export class ProductCategory {

@@ -12,7 +12,17 @@ import {User} from './User';
 import {Product} from "./Product";
 import {RelationColumn} from "../helpers";
 import {GraphQLInt} from "graphql";
+import Seed from "../decorators/seed";
+import Faker from "faker";
 
+@Seed({
+    amount: 50,
+    fill: function (entity: Order, faker: typeof Faker) {
+        entity.description = faker.lorem.sentence();
+        entity.title = faker.lorem.word();
+        entity.userId = 1;
+    }
+})
 @Entity()
 @ObjectType()
 export class Order {

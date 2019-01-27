@@ -6,7 +6,15 @@ import {
     OneToMany, JoinTable
 } from 'typeorm';
 import {CartItem} from "./CartItem";
+import Seed from "../decorators/seed";
+import Faker from "faker";
 
+@Seed({
+    amount: 50,
+    fill: function (entity: Cart, faker: typeof Faker) {
+        entity.sum = faker.random.number(90000);
+    }
+})
 @Entity()
 @ObjectType()
 export class Cart {
