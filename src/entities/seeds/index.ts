@@ -19,9 +19,9 @@ import Seed from "../../decorators/seed";
         });
 
         // con.isConnected
-        let users = (await factory(model)().makeMany(SEED_METADATA.amount));
-        for (let user of users) {
-            await em.save(user);
+        let entities = (await factory(model)().makeMany(SEED_METADATA.amount));
+        for (let entity of entities) {
+            await em.save(entity);
             SEED_METADATA.after && await SEED_METADATA.after(em);
         }
 

@@ -3,11 +3,10 @@ import {Order} from "./Order";
 import {Field, ObjectType} from "type-graphql";
 import {Product} from "./Product";
 import Seed from "../decorators/seed";
-import Faker from "faker";
 
-@Seed({
+@Seed<ProductCategory>({
     amount: 50,
-    fill(entity: ProductCategory, faker: typeof Faker) {
+    fill(entity, faker) {
         entity.title = faker.company.catchPhrase();
         entity.description = faker.lorem.sentence();
     },

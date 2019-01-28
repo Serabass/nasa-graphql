@@ -4,13 +4,12 @@ import {
     Entity, ManyToOne, PrimaryGeneratedColumn
 } from 'typeorm';
 import Seed from "../decorators/seed";
-import Faker from "faker";
 import {Product} from "./Product";
 import {User} from "./User";
 
-@Seed({
+@Seed<ProductRating>({
     amount: 50,
-    fill(entity: ProductRating, faker: typeof Faker) {
+    fill(entity, faker) {
         entity.value = faker.random.number(10);
     },
     async after(em) {

@@ -11,17 +11,15 @@ import {
 import {User} from './User';
 import {Product} from "./Product";
 import Seed from "../decorators/seed";
-import Faker from "faker";
 
-@Seed({
+@Seed<Order>({
     amount: 50,
-    fill(entity: Order, faker: typeof Faker) {
+    fill(entity, faker) {
         entity.description = faker.lorem.sentence();
         entity.title = faker.lorem.word();
     },
     async after(em) {
         await em.query('UPDATE `order` set userId = (SELECT id from user ORDER BY RAND() LIMIT 1)');
-
     }
 })
 @Entity()

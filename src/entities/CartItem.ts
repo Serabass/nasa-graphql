@@ -3,22 +3,17 @@ import {
     Column,
     ManyToOne,
     PrimaryGeneratedColumn,
-    CreateDateColumn,
     Entity,
-    UpdateDateColumn,
-    OneToMany, JoinTable, JoinColumn
+    JoinColumn
 } from 'typeorm';
-import {User} from './User';
 import {Product} from "./Product";
-import {RelationColumn} from "../helpers";
 import {GraphQLInt} from "graphql";
 import {Cart} from "./Cart";
 import Seed from "../decorators/seed";
-import Faker from "faker";
 
-@Seed({
+@Seed<CartItem>({
     amount: 50,
-    fill(entity: CartItem, faker: typeof Faker) {
+    fill(entity, faker) {
         entity.count = faker.random.number(90)
     },
     async after(em) {

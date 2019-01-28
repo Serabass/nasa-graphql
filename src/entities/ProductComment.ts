@@ -4,12 +4,11 @@ import {GraphQLID} from "graphql";
 import {Product} from "./Product";
 import {User} from "./User";
 import Seed from "../decorators/seed";
-import Faker from "faker";
 
 
-@Seed({
+@Seed<ProductComment>({
     amount: 50,
-    fill(entity: ProductComment, faker: typeof Faker) {
+    fill(entity, faker) {
         entity.content = faker.company.catchPhrase();
         // entity.parent = null;
         // entity.categoryId = 1;

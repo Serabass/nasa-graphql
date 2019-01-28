@@ -7,11 +7,10 @@ import {
 } from 'typeorm';
 import {CartItem} from "./CartItem";
 import Seed from "../decorators/seed";
-import Faker from "faker";
 
-@Seed({
+@Seed<Cart>({
     amount: 50,
-    fill(entity: Cart, faker: typeof Faker) {
+    fill(entity, faker) {
         entity.sum = faker.random.number(90000);
     },
     async after(em) {

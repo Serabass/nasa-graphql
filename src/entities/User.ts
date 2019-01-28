@@ -3,13 +3,12 @@ import * as bcrypt from 'bcryptjs';
 import {Order} from "./Order";
 import {Field, ObjectType} from "type-graphql";
 import {ProductComment} from "./ProductComment";
-import Faker from "faker";
 import Seed from "../decorators/seed";
 import {ProductRating} from "./ProductRating";
 
-@Seed({
+@Seed<User>({
     amount: 50,
-    fill: function (entity: User, faker: typeof Faker) {
+    fill(entity, faker) {
         const gender = faker.random.number(1);
         const firstName = faker.name.firstName(gender);
         const middleName = faker.name.firstName(gender);

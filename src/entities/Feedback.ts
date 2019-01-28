@@ -2,16 +2,15 @@ import {Field, ObjectType} from 'type-graphql';
 import {
     Column,
     PrimaryGeneratedColumn,
-    Entity,
-    OneToMany, JoinTable
+    Entity
 } from 'typeorm';
 import {CartItem} from "./CartItem";
 import Seed from "../decorators/seed";
 import Faker from "faker";
 
-@Seed({
+@Seed<Feedback>({
     amount: 50,
-    fill(entity: Feedback, faker: typeof Faker) {
+    fill(entity, faker) {
         const gender = faker.random.number(1);
         const firstName = faker.name.firstName(gender);
         const lastName = faker.name.lastName(gender);

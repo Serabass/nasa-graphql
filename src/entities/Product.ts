@@ -4,12 +4,11 @@ import {Field, FieldResolver, ObjectType, Resolver} from "type-graphql";
 import {ProductCategory} from "./ProductCategory";
 import {ProductComment} from "./ProductComment";
 import Seed from "../decorators/seed";
-import Faker from "faker";
 import {ProductRating} from "./ProductRating";
 
-@Seed({
+@Seed<Product>({
     amount: 50,
-    fill(entity: Product, faker: typeof Faker) {
+    fill(entity, faker) {
         entity.title = faker.company.catchPhrase();
         entity.description = faker.lorem.sentence();
         entity.price = faker.random.number(10000);
