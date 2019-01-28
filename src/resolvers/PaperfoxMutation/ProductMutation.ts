@@ -2,8 +2,6 @@ import {Arg, Authorized, Ctx, FieldResolver, ObjectType, Resolver, Root} from "t
 import {InjectRepository} from "typeorm-typedi-extensions";
 import {Order} from "../../entities/Order";
 import {Repository} from "typeorm";
-import {User} from "../../entities/User";
-import {Cart} from "../../entities/Cart";
 import {CartArgs} from "../models/types";
 
 @ObjectType()

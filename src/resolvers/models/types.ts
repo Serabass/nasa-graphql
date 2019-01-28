@@ -12,7 +12,7 @@ export class PaginationArgs {
     @Field() page: number;
     @Field() perPage: number;
 
-    skipTakeOptions(): any {
+    skipTakeOptions(): { skip: number, take: number } {
         return {
             skip: (this.page - 1) * this.perPage,
             take: this.perPage

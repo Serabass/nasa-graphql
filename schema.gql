@@ -56,7 +56,7 @@ input FeedbackInfoArgs {
 }
 
 type FeedbackMutation {
-  submit(feedbackInfo: FeedbackInfoArgs!): [Order!]!
+  submit(feedbackInfo: FeedbackInfoArgs!): Boolean!
 }
 
 type MeQuery {

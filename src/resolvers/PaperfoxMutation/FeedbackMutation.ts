@@ -2,9 +2,7 @@ import {Arg, Authorized, Ctx, FieldResolver, ObjectType, Resolver, Root} from "t
 import {InjectRepository} from "typeorm-typedi-extensions";
 import {Order} from "../../entities/Order";
 import {Repository} from "typeorm";
-import {User} from "../../entities/User";
-import {Cart} from "../../entities/Cart";
-import {CartArgs, FeedbackInfoArgs} from "../models/types";
+import {FeedbackInfoArgs} from "../models/types";
 
 @ObjectType()
 @Resolver(() => FeedbackMutation)
@@ -15,10 +13,10 @@ export class FeedbackMutation {
     }
 
     @Authorized()
-    @FieldResolver(type => [Order])
+    @FieldResolver(type => Boolean)
     async submit(@Root() projectsQuery: FeedbackMutation,
                  @Ctx() ctx,
-                 @Arg('feedbackInfo') cart: FeedbackInfoArgs): Promise<Order[]> {
+                 @Arg('feedbackInfo') cart: FeedbackInfoArgs): Promise<boolean> {
         return <any>{};
     }
 }
