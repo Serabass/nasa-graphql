@@ -1,10 +1,10 @@
 
 type Query {
-    Paperfox: PaperfoxQuery
+    Store: StoreQuery
 }
 
 type Mutation {
-    Paperfox: PaperfoxMutation
+    Store: StoreMutation
     Auth: AuthMutation
 }
 
@@ -13,7 +13,7 @@ schema {
     mutation: Mutation
 }
 
-type PaperfoxQuery {
+type StoreQuery {
     Products: ProductQuery
     Me: MeQuery
     Cart: CartQuery
@@ -35,7 +35,7 @@ type MeMutation {
     updateInfo(info: User): User
 }
 
-type PaperfoxMutation {
+type StoreMutation {
     Product: ProductMutation
     # Category: CategoryMutation
     Me: MeMutation

@@ -1,19 +1,19 @@
 import {Ctx, Mutation, Query} from "type-graphql";
-import {PaperfoxQuery} from "./PaperfoxQuery";
+import {StoreQuery} from "./StoreQuery";
 import {AuthMutation} from "./AuthMutation";
 import {Context} from "../context";
-import {PaperfoxMutation} from "./PaperfoxMutation";
+import {StoreMutation} from "./StoreMutation";
 
 export class RootQueries {
-    @Query((type) => PaperfoxQuery, {nullable: true})
-    public async Paperfox(@Ctx() ctx: Context): Promise<any> {
+    @Query((type) => StoreQuery, {nullable: true})
+    public async Store(@Ctx() ctx: Context): Promise<any> {
         return {};
     }
 }
 
 export class RootMutations {
-    @Mutation((type) => PaperfoxMutation, {nullable: true})
-    public async Paperfox(@Ctx() ctx: Context): Promise<any> {
+    @Mutation((type) => StoreMutation, {nullable: true})
+    public async Store(@Ctx() ctx: Context): Promise<any> {
         return {};
     }
 

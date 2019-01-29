@@ -5,14 +5,14 @@ import {MeQuery} from "./MeQuery";
 import {CartQuery} from "./CartQuery";
 
 @ObjectType()
-@Resolver(() => PaperfoxQuery)
-export class PaperfoxQuery {
+@Resolver(() => StoreQuery)
+export class StoreQuery {
     constructor() {
     }
 
     @FieldResolver((type) => ProductQuery)
     public async Products(@Ctx() ctx: Context,
-                          @Root() dcut: PaperfoxQuery): Promise<any> {
+                          @Root() dcut: StoreQuery): Promise<any> {
         return {};
     }
 

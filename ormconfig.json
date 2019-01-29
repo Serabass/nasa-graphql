@@ -4,7 +4,7 @@
   "port": 3306,
   "username": "root",
   "password": "",
-  "database": "paperfox",
+  "database": "store",
   "synchronize": true,
   "logging": false,
   "entities": ["src/entities/**/*.ts"],
