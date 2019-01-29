@@ -1,9 +1,11 @@
-import {Ctx, FieldResolver, ObjectType, Resolver, Root} from "type-graphql";
+import {Arg, Ctx, FieldResolver, ObjectType, Resolver, Root} from "type-graphql";
 import {Context} from "../../context";
 import {ProductQuery} from "./ProductQuery";
 import {MeQuery} from "./MeQuery";
 import {CartQuery} from "./CartQuery";
 import {StoreSubQuery} from "./StoreSubQuery";
+import RemoteApi from "../../decorators/remote-schema";
+import RemoteSchema from "../../decorators/remote-schema";
 
 @ObjectType()
 @Resolver(() => StoreQuery)
@@ -31,6 +33,27 @@ export class StoreQuery {
 
     @FieldResolver((type) => StoreSubQuery, {nullable: true})
     public async Sub(@Ctx() ctx: Context): Promise<any> {
+        return {};
+    }
+
+    @RemoteApi({
+        url: "https://swapi.co/api/people/:id",
+    })
+    @FieldResolver((type) => Number, {nullable: true})
+    public async RemoteApi(@Ctx() ctx: Context,
+                           @Arg("id", {nullable: false}) id: number): Promise<any> {
+        return {};
+    }
+
+    @RemoteSchema({
+        url: "https://graph.ps.kz/",
+        resolve(data) {
+            return data;
+        },
+    })
+    @FieldResolver((type) => Number, {nullable: true})
+    public async RemoteSchema(@Ctx() ctx: Context,
+                              @Arg("id") id: number): Promise<any> {
         return {};
     }
 }

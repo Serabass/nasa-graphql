@@ -28,3 +28,5 @@ Rename <projectname> to your projects' name.
 TODO:
  - Разобраться с исключением при запуске
  - Добавить резолверы для монго
+ - Попробовать реализовать подобие ngx-core - src/resolvers/StoreQuery/index.ts:37
+ - Попробовать реализовать обращение к удаленной схеме - src/resolvers/StoreQuery/index.ts:46
