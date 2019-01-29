@@ -1,9 +1,8 @@
-import {Ctx, FieldResolver, ObjectType, Query, Resolver, Root} from "type-graphql";
+import {Ctx, FieldResolver, ObjectType, Resolver, Root} from "type-graphql";
 import {Context} from "../../context";
 import {ProductQuery} from "./ProductQuery";
 import {MeQuery} from "./MeQuery";
 import {CartQuery} from "./CartQuery";
-import {MongoQuery} from "../MongoQuery";
 import {StoreSubQuery} from "./StoreSubQuery";
 
 @ObjectType()
