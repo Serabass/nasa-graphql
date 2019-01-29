@@ -3,15 +3,21 @@ import {StoreQuery} from "./StoreQuery";
 import {AuthMutation} from "./AuthMutation";
 import {Context} from "../context";
 import {StoreMutation} from "./StoreMutation";
+import {MongoQuery} from "./MongoQuery";
 
-export class RootQueries {
+class RootQueries {
     @Query((type) => StoreQuery, {nullable: true})
     public async Store(@Ctx() ctx: Context): Promise<any> {
         return {};
     }
+
+    @Query((type) => MongoQuery, {nullable: true})
+    public async Mongo(@Ctx() ctx: Context): Promise<any> {
+        return {};
+    }
 }
 
-export class RootMutations {
+class RootMutations {
     @Mutation((type) => StoreMutation, {nullable: true})
     public async Store(@Ctx() ctx: Context): Promise<any> {
         return {};
