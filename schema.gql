@@ -145,7 +145,7 @@ type ProductMutation {
 }
 
 type ProductQuery {
-  all(pagination: PaginationArgs): [Product!]!
+  all(pagination: PaginationArgs): [Product!]
   search(query: String, pagination: PaginationArgs): [Product!]!
   categories(pagination: PaginationArgs): [ProductCategory!]!
 }

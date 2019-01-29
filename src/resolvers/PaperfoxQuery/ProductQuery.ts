@@ -14,7 +14,9 @@ export class ProductQuery {
     ) {
     }
 
-    @FieldResolver(() => [Product])
+    @FieldResolver(() => [Product], {
+        nullable: true,
+    })
     public async all(@Arg("pagination", {nullable: true}) pagination: PaginationArgs): Promise<Product[]> {
         const options = pagination ? {
             ...pagination.skipTakeOptions(),

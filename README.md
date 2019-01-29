@@ -26,4 +26,5 @@ git clone https://github.com/Aidurber/graphql-typescript-boilerplate.git --depth
 Rename <projectname> to your projects' name.
 
 TODO:
- - Add & use https://www.npmjs.com/package/@decorators/mongoose
+ - Удалить упоминания PF
+ - Разобраться с исключением при запуске
