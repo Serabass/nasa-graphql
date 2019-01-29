@@ -26,6 +26,5 @@ git clone https://github.com/Aidurber/graphql-typescript-boilerplate.git --depth
 Rename <projectname> to your projects' name.
 
 TODO:
- - Удалить упоминания PF
  - Разобраться с исключением при запуске
  - Добавить резолверы для монго

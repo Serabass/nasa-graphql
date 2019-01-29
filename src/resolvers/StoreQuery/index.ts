@@ -12,19 +12,19 @@ export class StoreQuery {
 
     @FieldResolver((type) => ProductQuery)
     public async Products(@Ctx() ctx: Context,
-                          @Root() dcut: StoreQuery): Promise<any> {
+                          @Root() storeQuery: StoreQuery): Promise<any> {
         return {};
     }
 
     @FieldResolver((type) => MeQuery)
     public async Me(@Ctx() ctx: Context,
-                    @Root() dcut: MeQuery): Promise<any> {
+                    @Root() storeQuery: MeQuery): Promise<any> {
         return {};
     }
 
     @FieldResolver((type) => CartQuery)
     public async Cart(@Ctx() ctx,
-                      @Root() dcut: CartQuery): Promise<any> {
+                      @Root() storeQuery: CartQuery): Promise<any> {
         return {};
     }
 }
