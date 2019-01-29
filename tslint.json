@@ -10,7 +10,8 @@
         "member-ordering": false,
         "max-classes-per-file": false,
         "no-console": false,
-        "prefer-const": false
+        "prefer-const": false,
+        "variable-name": false
     },
     "rulesDirectory": []
 }

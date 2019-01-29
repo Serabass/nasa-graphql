@@ -5,6 +5,7 @@ import * as TypeORM from "typeorm";
 import * as TypeGraphQL from "type-graphql";
 import createServer from "./createServer";
 import bootstrapDatabase from "./db";
+import mongoConnect from "./mongo";
 
 dotenv.config();
 
@@ -13,6 +14,7 @@ TypeORM.useContainer(Container);
 
 async function bootstrap() {
     const db = await bootstrapDatabase();
+    await mongoConnect();
 
     const server = await createServer(db);
     await server.start({}, (deets) => {
