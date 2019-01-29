@@ -24,3 +24,6 @@ This is a barebones boilerplate that I'll be using to test out ideas quickly.
 git clone https://github.com/Aidurber/graphql-typescript-boilerplate.git --depth=1 <projectname>
 ```
 Rename <projectname> to your projects' name.
+
+TODO:
+ - Add & use https://www.npmjs.com/package/@decorators/mongoose
