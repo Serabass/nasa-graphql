@@ -1,20 +1,22 @@
 import * as jwt from "jsonwebtoken";
+import Env from "../env";
+
+export interface IJWTOptions {
+    secret?: string;
+    algorithm?: string;
+}
 
 export default class JWT {
 
-    public static DEFAULT_ALGO = 'RS256'; 
+    public static DEFAULT_ALGO = "RS256";
 
-    public static secret = process.env.APP_SECRET;
+    public static secret = Env.APP_SECRET;
 
-    public static sign(payload: any, secret: string = this.secret): string {
-        return jwt.sign(payload, secret, {
-            algorithm: this.DEFAULT_ALGO
-        });
+    public static sign(payload: any, algorithm = this.DEFAULT_ALGO, secret = this.secret): string {
+        return jwt.sign(payload, secret, {algorithm});
     }
 
-    public static verify<T>(token: string, secret: string = this.secret): T {
-        return <T><unknown>jwt.verify(token, secret, {
-            algorithms: [this.DEFAULT_ALGO]
-        });
+    public static verify<T = any>(token: string, algorithm = this.DEFAULT_ALGO, secret = this.secret): T {
+        return jwt.verify(token, secret, {algorithms: [algorithm]}) as unknown as T;
     }
 }

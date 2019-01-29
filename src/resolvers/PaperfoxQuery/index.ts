@@ -10,21 +10,21 @@ export class PaperfoxQuery {
     constructor() {
     }
 
-    @FieldResolver(type => ProductQuery)
-    async Products(@Ctx() ctx: Context,
-                   @Root() dcut: PaperfoxQuery): Promise<any> {
+    @FieldResolver((type) => ProductQuery)
+    public async Products(@Ctx() ctx: Context,
+                          @Root() dcut: PaperfoxQuery): Promise<any> {
         return {};
     }
 
-    @FieldResolver(type => MeQuery)
-    async Me(@Ctx() ctx: Context,
-             @Root() dcut: MeQuery): Promise<any> {
+    @FieldResolver((type) => MeQuery)
+    public async Me(@Ctx() ctx: Context,
+                    @Root() dcut: MeQuery): Promise<any> {
         return {};
     }
 
-    @FieldResolver(type => CartQuery)
-    async Cart(@Ctx() ctx,
-               @Root() dcut: CartQuery): Promise<any> {
+    @FieldResolver((type) => CartQuery)
+    public async Cart(@Ctx() ctx,
+                      @Root() dcut: CartQuery): Promise<any> {
         return {};
     }
 }

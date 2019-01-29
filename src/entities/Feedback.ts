@@ -1,12 +1,10 @@
-import {Field, ObjectType} from 'type-graphql';
+import {Field, ObjectType} from "type-graphql";
 import {
     Column,
     PrimaryGeneratedColumn,
-    Entity
-} from 'typeorm';
-import {CartItem} from "./CartItem";
+    Entity,
+} from "typeorm";
 import Seed from "../decorators/seed";
-import Faker from "faker";
 
 @Seed<Feedback>({
     amount: 50,
@@ -20,7 +18,7 @@ import Faker from "faker";
         entity.phone = faker.phone.phoneNumber();
     },
     async after(em) {
-    }
+    },
 })
 @Entity()
 @ObjectType()

@@ -1,6 +1,5 @@
-import {Request, Response, NextFunction} from 'express';
-import * as jwt from 'jsonwebtoken';
-import {AuthTokenPayload} from '../resolvers/models/types';
+import {Request, Response, NextFunction} from "express";
+import {AuthTokenPayload} from "../resolvers/types/input-types";
 import JWT from "../services/JWT";
 
 const authMiddleware = (req: Request, res: Response, next: NextFunction) => {
@@ -8,12 +7,13 @@ const authMiddleware = (req: Request, res: Response, next: NextFunction) => {
     if (!authorization) {
         return next();
     }
-    const token = authorization.replace('Bearer ', '');
+    const token = authorization.replace(/^Bearer\s+/, "");
     const verified = JWT.verify<AuthTokenPayload>(token);
     if (!verified) {
         return next();
     }
-    req['userId'] = verified.id;
+    // @ts-ignore
+    req.userId = verified.id;
 
     return next();
 };

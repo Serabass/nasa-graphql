@@ -1,10 +1,9 @@
-import {Entity, PrimaryGeneratedColumn, Column, ManyToOne} from 'typeorm';
+import {Entity, PrimaryGeneratedColumn, Column, ManyToOne} from "typeorm";
 import {Field, ObjectType} from "type-graphql";
 import {GraphQLID} from "graphql";
 import {Product} from "./Product";
 import {User} from "./User";
 import Seed from "../decorators/seed";
-
 
 @Seed<ProductComment>({
     amount: 50,
@@ -14,26 +13,26 @@ import Seed from "../decorators/seed";
         // entity.categoryId = 1;
     },
     async after(em) {
-        await em.query('UPDATE `product_comment` set userId = (SELECT id from user ORDER BY RAND() LIMIT 1)');
-        await em.query('UPDATE `product_comment` set productId = (SELECT id from product ORDER BY RAND() LIMIT 1)');
-    }
+        await em.query("UPDATE `product_comment` set userId = (SELECT id from user ORDER BY RAND() LIMIT 1)");
+        await em.query("UPDATE `product_comment` set productId = (SELECT id from product ORDER BY RAND() LIMIT 1)");
+    },
 })
 @Entity()
 @ObjectType()
 export class ProductComment {
-    @Field(type => GraphQLID)
+    @Field((type) => GraphQLID)
     @PrimaryGeneratedColumn()
-    id: number;
+    public id: number;
 
     @Field()
     @Column({length: 512})
-    content: string;
+    public content: string;
 
-    @Field(type => User)
-    @ManyToOne(type => User, user => user.comments)
-    user: User;
+    @Field((type) => User)
+    @ManyToOne((type) => User, (user) => user.comments)
+    public user: User;
 
-    @Field(type => Product)
-    @ManyToOne(type => Product, product => product.comments)
-    product: Product;
+    @Field((type) => Product)
+    @ManyToOne((type) => Product, (product) => product.comments)
+    public product: Product;
 }

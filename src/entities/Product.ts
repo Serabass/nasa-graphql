@@ -1,4 +1,4 @@
-import {Entity, PrimaryGeneratedColumn, Column, ManyToOne, OneToMany, JoinTable} from 'typeorm';
+import {Entity, PrimaryGeneratedColumn, Column, ManyToOne, OneToMany, JoinTable} from "typeorm";
 import {Order} from "./Order";
 import {Field, FieldResolver, ObjectType, Resolver} from "type-graphql";
 import {ProductCategory} from "./ProductCategory";
@@ -14,65 +14,65 @@ import {ProductRating} from "./ProductRating";
         entity.price = faker.random.number(10000);
     },
     async after(em) {
-        await em.query('UPDATE `product` set categoryId = (SELECT id from product_category ORDER BY RAND() LIMIT 1)');
+        await em.query("UPDATE `product` set categoryId = (SELECT id from product_category ORDER BY RAND() LIMIT 1)");
 
-    }
+    },
 })
 @Entity()
 @ObjectType()
 export class Product {
     @PrimaryGeneratedColumn()
     @Field({
-        description: 'Product id'
+        description: "Product id",
     })
-    id: number;
+    public id: number;
 
     @Column({length: 50})
     @Field({
-        description: 'The title of the product'
+        description: "The title of the product",
     })
-    title: string;
+    public title: string;
 
     @Column({length: 512})
     @Field({
-        description: 'The description of the product'
+        description: "The description of the product",
     })
-    description: string;
+    public description: string;
 
-    @Field(type => Order, {
-        description: 'Associated category'
+    @Field((type) => Order, {
+        description: "Associated category",
     })
-    @ManyToOne(type => ProductCategory, category => category.products)
-    category: ProductCategory;
+    @ManyToOne((type) => ProductCategory, (category) => category.products)
+    public category: ProductCategory;
 
     // @Field(type => GraphQLInt, {nullable: true})
     // @RelationColumn({nullable: true})
     // public categoryId: number;
 
-    @Field(type => [ProductComment])
-    @OneToMany(type => ProductComment, comment => comment.user)
-    comments: ProductComment[];
+    @Field((type) => [ProductComment])
+    @OneToMany((type) => ProductComment, (comment) => comment.user)
+    public comments: ProductComment[];
 
-    @Field(type => [ProductRating])
-    @OneToMany(type => ProductRating, rating => rating.product)
-    ratings: ProductRating[];
+    @Field((type) => [ProductRating])
+    @OneToMany((type) => ProductRating, (rating) => rating.product)
+    public ratings: ProductRating[];
 
     @Column()
     @Field({
-        description: 'Product price'
+        description: "Product price",
     })
-    price: number;
+    public price: number;
 }
 
 @Resolver(Product)
 export class ProductResolvers {
-    @FieldResolver(type => [String])
-    public images() : string[] {
-        let result = [];
-        let count = Math.floor(Math.random() * 10);
+    @FieldResolver((type) => [String])
+    public images(): string[] {
+        const result = [];
+        const count = Math.floor(Math.random() * 10);
 
         for (let i = 0; i < count; i++) {
-            result.push('https://dummyimage.com/600x400/000/fff.png');
+            result.push("https://dummyimage.com/600x400/000/fff.png");
         }
 
         return result;

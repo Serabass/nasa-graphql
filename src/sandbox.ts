@@ -5,10 +5,8 @@ async function bootstrap() {
     const db = await bootstrapDatabase();
 
     let proj = await db.getRepository(Order).find({
-        relations: ['user']
+        relations: ["user"],
     });
-    debugger;
 }
 
 bootstrap();
-

@@ -1,26 +1,28 @@
 import {Arg, FieldResolver, ObjectType, Resolver} from "type-graphql";
-import {InjectRepository} from "typeorm-typedi-extensions";
+import {InjectRepository as Inject} from "typeorm-typedi-extensions";
 import {User} from "../entities/User";
 import {Repository} from "typeorm";
-import {AuthPayload, SignInArgs, SignUpArgs} from "./models/types";
+import {SignInArgs, SignUpArgs} from "./types/input-types";
 import JWT from "../services/JWT";
+import {AuthPayload} from "./types/object-types";
 
 @ObjectType()
-@Resolver(of => AuthMutation)
+@Resolver((of) => AuthMutation)
 export class AuthMutation {
     constructor(
-        @InjectRepository(User) private readonly userRepository: Repository<User>
+        @Inject(User) private readonly userRepository: Repository<User>,
     ) {
     }
 
-    @FieldResolver(returns => AuthPayload)
-    async signUp(@Arg('input') input: SignUpArgs): Promise<AuthPayload> {
+    @FieldResolver((returns) => AuthPayload)
+    public async signUp(@Arg("input") input: SignUpArgs): Promise<AuthPayload> {
         const {email} = input;
         let user = await this.userRepository.findOne({where: {email}});
 
         if (user) {
-            throw new Error('User already exists');
+            throw new Error("User already exists");
         }
+
         user = await this.userRepository.create(input);
         await this.userRepository.save(user);
         const payload = new AuthPayload();
@@ -30,18 +32,18 @@ export class AuthMutation {
         return payload;
     }
 
-    @FieldResolver(returns => AuthPayload)
-    async signIn(@Arg('input') input: SignInArgs): Promise<AuthPayload> {
+    @FieldResolver((returns) => AuthPayload)
+    public async signIn(@Arg("input") input: SignInArgs): Promise<AuthPayload> {
         const {email, password} = input;
         const user = await this.userRepository.findOne({where: {email}});
         const validPassword = await user.comparePassword(password);
         if (!user || !validPassword) {
             // TODO Use correct HTTP statuses
-            throw new Error('Invalid credentials');
+            throw new Error("Invalid credentials");
         }
 
         return {
-            token: JWT.sign({id: user.id, email: user.email})
+            token: JWT.sign({id: user.id, email: user.email}),
         };
     }
 }

@@ -9,15 +9,15 @@ export class PaperfoxMutation {
     constructor() {
     }
 
-    @FieldResolver(type => ProductMutation)
-    async Product(@Ctx() ctx: Context,
-                  @Root() pf: PaperfoxMutation): Promise<any> {
+    @FieldResolver((type) => ProductMutation)
+    public async Product(@Ctx() ctx: Context,
+                         @Root() pf: PaperfoxMutation): Promise<any> {
         return {};
     }
 
-    @FieldResolver(type => FeedbackMutation)
-    async Feedback(@Ctx() ctx: Context,
-                  @Root() pf: PaperfoxMutation): Promise<any> {
+    @FieldResolver((type) => FeedbackMutation)
+    public async Feedback(@Ctx() ctx: Context,
+                          @Root() pf: PaperfoxMutation): Promise<any> {
         return {};
     }
 

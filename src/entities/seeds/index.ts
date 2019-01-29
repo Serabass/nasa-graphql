@@ -1,16 +1,16 @@
 import {define, factory} from "typeorm-seeding";
 import Faker from "faker";
 import bootstrapDatabase from "../../db";
-import 'reflect-metadata';
+import "reflect-metadata";
 import Seed from "../../decorators/seed";
 
-(async function () {
+(async () => {
     let con = await bootstrapDatabase();
     const em = con.createEntityManager();
-    let SEED_MODELS = Reflect.getMetadata('SEED_MODELS', Seed);
+    const SEED_MODELS = Reflect.getMetadata("SEED_MODELS", Seed);
 
     for (let model of SEED_MODELS) {
-        let SEED_METADATA = Reflect.getMetadata('SEED_METADATA', model);
+        const SEED_METADATA = Reflect.getMetadata("SEED_METADATA", model);
 
         define(model, (faker: typeof Faker, settings: { roles: string[] }) => {
             const entity = new model();
@@ -22,7 +22,11 @@ import Seed from "../../decorators/seed";
         let entities = (await factory(model)().makeMany(SEED_METADATA.amount));
         for (let entity of entities) {
             await em.save(entity);
-            SEED_METADATA.after && await SEED_METADATA.after(em);
+        }
+        for (let entity of entities) {
+            if (SEED_METADATA.after) {
+                await SEED_METADATA.after(em);
+            }
         }
 
     }

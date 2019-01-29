@@ -35,7 +35,7 @@ input CartItemArgs {
 }
 
 type CartQuery {
-  getCart(id: Float!): Product!
+  getCart(id: Float!): Cart!
 }
 
 # The javascript `Date` as string. Type represents date and time as the ISO Date string.
@@ -147,7 +147,7 @@ type ProductMutation {
 type ProductQuery {
   all(pagination: PaginationArgs): [Product!]!
   search(query: String, pagination: PaginationArgs): [Product!]!
-  categories(pagination: PaginationArgs): [Product!]!
+  categories(pagination: PaginationArgs): [ProductCategory!]!
 }
 
 type ProductRating {
