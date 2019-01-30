@@ -1,5 +1,6 @@
 import {buildSchema, field, indexed, schema, unique, virtuals} from "mongoose-schema-decorators";
 import {Document, model, Model, Mongoose, Schema} from "mongoose";
+import {Field, ObjectType} from "type-graphql";
 
 @schema({
     toJSON: {
@@ -7,19 +8,24 @@ import {Document, model, Model, Mongoose, Schema} from "mongoose";
         virtuals: true,
     },
 })
-class Customer {
+@ObjectType()
+export class Customer {
     @indexed
     @unique
+    @Field({nullable: true})
     public _id: number;
 
     @field
     @indexed
     @unique
+    @Field({nullable: true})
     public name: string;
 
     @field(Date)
+    @Field({nullable: true})
     public createdDate: Date;
 
+    @Field({nullable: true})
     get getRef(): string {
         return `${this._id}-${this.name}`;
     }

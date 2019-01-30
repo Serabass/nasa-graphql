@@ -36,6 +36,11 @@ export class StoreQuery {
         return {};
     }
 
+    @FieldResolver((type) => Number, {nullable: true})
+    public async num(@Ctx() ctx: Context): Promise<number> {
+        return 666;
+    }
+
     @RemoteApi({
         url: "https://swapi.co/api/people/:id",
     })
