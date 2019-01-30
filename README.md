@@ -32,7 +32,8 @@ Rename <projectname> to your projects' name.
 
 TODO:
  - Разобраться с исключением при запуске
- - Добавить резолверы для монго
+ - Добить резолверы для монго
  - Попробовать реализовать подобие ngx-core - src/resolvers/StoreQuery/index.ts:37
  - Попробовать реализовать обращение к удаленной схеме - src/resolvers/StoreQuery/index.ts:46
  - Сделать возможность выбора баз данных через env. Например DB_SOURCES=mongo,mysql,sqlite
+ - Добавить декоратор `@Corp()`

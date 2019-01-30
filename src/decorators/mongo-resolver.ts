@@ -1,6 +1,6 @@
 import {composeWithMongoose} from "graphql-compose-mongoose";
 import "reflect-metadata";
-import {Args, Ctx, FieldResolver} from "type-graphql";
+import {FieldResolver} from "type-graphql";
 import {getMetadataStorage} from "type-graphql/metadata/getMetadataStorage";
 
 const METADATA_KEY = "mongo:fields";
@@ -9,6 +9,8 @@ export default function MongoResolver(model) {
 
     return (target: any) => {
         let fields = Reflect.getMetadata(METADATA_KEY, target.prototype);
+        let fields2 = Reflect.getMetadata(METADATA_KEY, target.prototype.constructor);
+        let baseClass = Object.getPrototypeOf(target);
 
         if (!fields) {
             fields = {};
@@ -21,8 +23,8 @@ export default function MongoResolver(model) {
             let wmd2 = Reflect.getOwnMetadataKeys(target.prototype, key);
             let wmd12 = Reflect.getMetadata("design:type", target.prototype, key);
 
-            var x: any = getMetadataStorage();
-            let aa = x.resolverClasses.find((a) => a.target === target);
+            let x: any = getMetadataStorage();
+            let aa = x.resolverClasses.find((aaa) => aaa.target === target);
             let field = fields[key];
             target.prototype[key] = (args: any, ctx: any) => {
                 debugger;
@@ -31,19 +33,17 @@ export default function MongoResolver(model) {
                 });*/
             };
 
-            Reflect.defineMetadata("design:paramtypes", [Object, Object], target.prototype, key);
-            Args(() => Number)(target.prototype, key, 0);
-            Ctx()(target.prototype, key, 1);
+            // Reflect.defineMetadata("design:paramtypes", [Object, Object], target.prototype, key);
+            // Args(() => Number)(target.prototype, key, 0);
+            // Ctx()(target.prototype, key, 1);
             FieldResolver(() => field.type)(target.prototype, field.name, {});
             let a = mongooseTypeComposer.getResolver(field.name);
-            debugger;
             let xxx = Reflect.getMetadata("design:paramtypes", target.prototype, key);
-            debugger;
         });
     };
 }
 
-export function MongoField(name: string, type: any) {
+export function MongoFieldResolver(name: string, type: any) {
     return (target: any, propertyKey: string) => {
         let metaData = Reflect.getMetadata(METADATA_KEY, target);
 

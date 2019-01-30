@@ -46,7 +46,11 @@ type Customer {
 }
 
 type CustomerQuery {
-  findById(id: Float!): Customer!
+  sandbox: Float!
+  findById: Customer!
+  count: Int!
+  findOne: Customer!
+  findMany: [Customer!]!
 }
 
 # The javascript `Date` as string. Type represents date and time as the ISO Date string.

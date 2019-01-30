@@ -1,14 +1,14 @@
-import {ObjectType, Resolver} from "type-graphql";
+import {FieldResolver, ObjectType, Resolver} from "type-graphql";
 import {Customer, CustomerModel} from "../../entities/mongo/Customer";
-import MongoResolver, {MongoField} from "../../decorators/mongo-resolver";
+import MongoResolver, {MongoFieldResolver} from "../../decorators/mongo-resolver";
+import {MongoQueryBase} from "./MongoQueryBase";
 
 @MongoResolver(CustomerModel)
 @ObjectType()
 @Resolver(() => CustomerQuery)
-export class CustomerQuery {
-    constructor() {
+export class CustomerQuery extends MongoQueryBase {
+    @FieldResolver(() => Number)
+    public async sandbox(): Promise<number> {
+        return 123;
     }
-
-    @MongoField("findById", Customer)
-    public findById: (id: number) => Promise<Customer>;
 }
