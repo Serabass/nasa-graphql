@@ -11,7 +11,7 @@ import {Cart} from "../../entities/Cart";
 export class CartQuery {
     constructor(
         @Inject(Cart) private readonly cartRepo: Repository<Cart>,
-        @Inject(ProductComment) private readonly sceneRepository: Repository<ProductComment>) {
+        @Inject(ProductComment) private readonly productRepository: Repository<ProductComment>) {
     }
 
     // @Authorized()

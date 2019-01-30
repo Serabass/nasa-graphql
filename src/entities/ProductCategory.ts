@@ -43,7 +43,7 @@ export class ProductCategory {
     public parent: ProductCategory;
 
     @Field((type) => [Product], {
-        description: "The list of scenes",
+        description: "The list of products",
     })
     @OneToMany((type) => Product, (product) => product.category)
     public products: Product[];

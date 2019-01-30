@@ -12,7 +12,7 @@ import {PaginationArgs} from "../types/input-types";
 export class MeQuery {
     constructor(
         @Inject(Order) private readonly orderRepository: Repository<Order>,
-        @Inject(ProductComment) private readonly sceneRepository: Repository<ProductComment>,
+        @Inject(ProductComment) private readonly productRepository: Repository<ProductComment>,
     ) {
     }
 
