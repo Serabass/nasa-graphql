@@ -7,6 +7,10 @@ export default function MongoResolver(model) {
     return (target: any) => {
         let fields = Reflect.getMetadata(METADATA_KEY, target.prototype);
 
+        if (!fields) {
+            fields = {};
+        }
+
         let md = Reflect.getMetadataKeys(target);
         let wmd = Reflect.getOwnMetadataKeys(target);
 

@@ -41,14 +41,6 @@ type CartQuery {
 # The javascript `Date` as string. Type represents date and time as the ISO Date string.
 scalar DateTime
 
-type Feedback {
-  id: Float
-  fullName: String
-  email: String
-  phone: String
-  content: String
-}
-
 input FeedbackInfoArgs {
   email: String!
   phone: String!
@@ -59,15 +51,12 @@ type FeedbackMutation {
   submit(feedbackInfo: FeedbackInfoArgs!): Boolean!
 }
 
-# The `JSON` scalar type represents JSON values as specified by [ECMA-404](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf).
-scalar JSON
-
 type MeQuery {
   orders(pagination: PaginationArgs): [Order!]!
 }
 
 type MongoQuery {
-  findById(id: Float!): JSON!
+  findById(id: Float!): Float!
 }
 
 type Mutation {
@@ -180,6 +169,8 @@ type StoreQuery {
   Me: MeQuery!
   Cart: CartQuery!
   Sub: StoreSubQuery
+  RemoteApi(id: Float!): Float
+  RemoteSchema(id: Float!): Float
 }
 
 type StoreSubQuery {

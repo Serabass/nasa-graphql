@@ -8,10 +8,19 @@
             "type": "node",
             "request": "launch",
             "name": "Launch Program",
-            "program": "${workspaceFolder}\\src\\index.ts",
+            "program": "${workspaceFolder}/src/index.ts",
+            // "runtimeExecutable": "${workspaceFolder}/node_modules/.bin/ts-node",
+            "runtimeArgs": ["-r", "ts-node/register"],
+            "cwd": "${workspaceRoot}",
             "outFiles": [
                 "${workspaceFolder}/**/*.js"
-            ]
+            ],
+            "env": {
+                "PORT": "4000",
+                "APP_SECRET": "SECRET",
+                "MONGODB_URI": "mongodb://localhost:27017/store"
+            },
+            "sourceMaps": true
         }
     ]
 }
