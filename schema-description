@@ -8,7 +8,7 @@ Query
   Me
     Cabinet
       Orders
-        cancelOrder(id: ID!): Boolean
+        cancelOrder(orderId: ID!): Boolean!
     Cart
       addProducts(products: [Product]): Cart!
       removeProducts(products: [Product]): Cart!
@@ -25,7 +25,7 @@ Mutation
       SignUp(payload: RegisterPayload!): RegisterResult!
   Admin
     Orders
-      deleteOrder(id: ID!): Bool
+      deleteOrder(orderId: ID!): Bool
 
 schema:
 
@@ -60,4 +60,10 @@ type CategorySearchResult {
   page: Int!
   pageCount: Int!
   result: [Category]
+}
+
+type Order {
+    products: [Product]
+    sum: Float!
+    user: User
 }
