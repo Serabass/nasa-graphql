@@ -35,7 +35,7 @@ input CartItemArgs {
 }
 
 type CartQuery {
-  getCart(id: Float!): Cart!
+  getCart(id: String!): Cart!
 }
 
 # The javascript `Date` as string. Type represents date and time as the ISO Date string.

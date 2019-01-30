@@ -17,8 +17,8 @@ export class CartQuery {
     // @Authorized()
     @FieldResolver(() => Cart)
     public async getCart(@CtxUser user: User,
-                         @Arg("id") id: number,
+                         @Arg("id") id: string,
     ): Promise<Cart> {
-        return await this.cartRepo.findOne({id}, {});
+        return await this.cartRepo.findOne({id: parseInt(id, 10)}, {});
     }
 }

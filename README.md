@@ -1,5 +1,10 @@
 # Пример проекта с использованием Typescript, GraphQL, TypeGraphQL, TypeORM
 
+# Запуск
+ - `git clone ...`
+ - `cd ...`
+ - `npm i`
+ - `npm start`
 
 # GraphQL Typescript Boilerplate
 
@@ -30,3 +35,4 @@ TODO:
  - Добавить резолверы для монго
  - Попробовать реализовать подобие ngx-core - src/resolvers/StoreQuery/index.ts:37
  - Попробовать реализовать обращение к удаленной схеме - src/resolvers/StoreQuery/index.ts:46
+ - Сделать возможность выбора баз данных через env. Например DB_SOURCES=mongo,mysql,sqlite
