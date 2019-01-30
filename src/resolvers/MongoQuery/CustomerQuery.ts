@@ -1,11 +1,12 @@
-import {ObjectType} from "type-graphql";
+import {ObjectType, Resolver} from "type-graphql";
 import {Customer, CustomerModel} from "../../entities/mongo/Customer";
 import MongoResolver, {MongoFieldResolver} from "../../decorators/mongo-resolver";
 import {MongoQueryBase} from "./MongoQueryBase";
 import {GraphQLInt} from "graphql";
 
 @ObjectType()
-@MongoResolver(CustomerModel)
+// @MongoResolver(CustomerModel)
+@Resolver(() => CustomerQuery)
 export class CustomerQuery extends MongoQueryBase {
     @MongoFieldResolver("findById", Customer)
     public findById: (id: number) => Promise<Customer>;

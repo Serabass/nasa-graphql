@@ -8,16 +8,17 @@ export default function MongoResolver(model) {
     let mongooseTypeComposer = composeWithMongoose(model);
 
     return (target: any) => {
-        Reflect.defineMetadata("mongo:model", model, target);
         Resolver(() => target)(target);
+        Reflect.defineMetadata("mongo:model", model, target);
     };
 }
 
 export function MongoFieldResolver(name: string, type: any) {
     return (target: any, propertyKey: string) => {
+
         target[propertyKey] = () => {
-            let model = Reflect.getMetadata("mongo:model", target);
             debugger;
+            let model = Reflect.getMetadata("mongo:model", target);
             return 123;
         };
 
