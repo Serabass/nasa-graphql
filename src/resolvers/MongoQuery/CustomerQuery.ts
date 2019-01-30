@@ -1,14 +1,22 @@
-import {FieldResolver, ObjectType, Resolver} from "type-graphql";
+import {ObjectType} from "type-graphql";
 import {Customer, CustomerModel} from "../../entities/mongo/Customer";
 import MongoResolver, {MongoFieldResolver} from "../../decorators/mongo-resolver";
 import {MongoQueryBase} from "./MongoQueryBase";
+import {GraphQLInt} from "graphql";
 
-@MongoResolver(CustomerModel)
 @ObjectType()
-@Resolver(() => CustomerQuery)
+@MongoResolver(CustomerModel)
 export class CustomerQuery extends MongoQueryBase {
-    @FieldResolver(() => Number)
-    public async sandbox(): Promise<number> {
-        return 123;
-    }
+    @MongoFieldResolver("findById", Customer)
+    public findById: (id: number) => Promise<Customer>;
+
+    @MongoFieldResolver("count", GraphQLInt)
+    public count: () => Promise<number>;
+
+    @MongoFieldResolver("findOne", Customer)
+    public findOne: (input: any) => Promise<Customer>;
+
+    @MongoFieldResolver("findMany", [Customer])
+    public findMany: (input: any) => Promise<Customer[]>;
+
 }

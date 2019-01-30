@@ -6,17 +6,5 @@ export class MongoQueryBase {
     constructor() {
     }
 
-    @MongoFieldResolver("findById", Customer)
-    public findById: (id: number) => Promise<Customer>;
-
-    @MongoFieldResolver("count", GraphQLInt)
-    public count: () => Promise<number>;
-
-    @MongoFieldResolver("findOne", Customer)
-    public findOne: (input: any) => Promise<Customer>;
-
-    @MongoFieldResolver("findMany", [Customer])
-    public findMany: (input: any) => Promise<Customer[]>;
-
     /// ... etc
 }

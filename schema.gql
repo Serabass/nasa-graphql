@@ -46,7 +46,10 @@ type Customer {
 }
 
 type CustomerQuery {
-  sandbox: Float!
+  findById(data: JSON!): JSON!
+  count(data: JSON!): JSON!
+  findOne(data: JSON!): JSON!
+  findMany(data: JSON!): JSON!
 }
 
 # The javascript `Date` as string. Type represents date and time as the ISO Date string.
@@ -61,6 +64,9 @@ input FeedbackInfoArgs {
 type FeedbackMutation {
   submit(feedbackInfo: FeedbackInfoArgs!): Boolean!
 }
+
+# The `JSON` scalar type represents JSON values as specified by [ECMA-404](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf).
+scalar JSON
 
 type MeQuery {
   orders(pagination: PaginationArgs): [Order!]!

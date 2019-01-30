@@ -6,7 +6,6 @@ import {CartQuery} from "./CartQuery";
 import {StoreSubQuery} from "./StoreSubQuery";
 import {RemoteApi} from "../../decorators/remote-api";
 import RemoteSchema from "../../decorators/remote-schema";
-import {GraphQLJSON} from "graphql-compose";
 import {SWAPIFilmArgs} from "../types/input-types";
 import {SWAPIFilmResponse} from "../types/object-types";
 

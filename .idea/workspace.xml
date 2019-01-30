@@ -1,18 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0958b9d0-cad8-467c-ad6f-52de88a13a1a" name="Default Changelist" comment="upd">
+    <list default="true" id="0958b9d0-cad8-467c-ad6f-52de88a13a1a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/schema.gql" beforeDir="false" afterPath="$PROJECT_DIR$/schema.gql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/decorators/mongo-resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/decorators/mongo-resolver.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/decorators/remote-api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/decorators/remote-api.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entities/mongo/Customer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/mongo/Customer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/StoreQuery/ProductQuery.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/StoreQuery/ProductQuery.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/env.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/env.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/MongoQuery/CustomerQuery.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/MongoQuery/CustomerQuery.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/MongoQuery/MongoQueryBase.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/MongoQuery/MongoQueryBase.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/MongoQuery/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/MongoQuery/index.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/resolvers/StoreQuery/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/StoreQuery/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/types/input-types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/types/input-types.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/types/object-types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/types/object-types.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -55,8 +53,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/decorators/remote-api.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="394">
-              <caret line="25" column="10" lean-forward="true" selection-start-line="25" selection-start-column="10" selection-end-line="25" selection-end-column="10" />
+            <state relative-caret-position="600">
+              <caret line="20" column="50" lean-forward="true" selection-start-line="20" selection-start-column="50" selection-end-line="20" selection-end-column="50" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -64,11 +62,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/resolvers/StoreQuery/index.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="207">
-              <caret line="47" column="47" lean-forward="true" selection-start-line="47" selection-start-column="47" selection-end-line="47" selection-end-column="47" />
+            <state relative-caret-position="330">
+              <caret line="17" column="33" selection-start-line="17" selection-start-column="33" selection-end-line="17" selection-end-column="33" />
               <folding>
                 <element signature="e#0#87#0" expanded="true" />
               </folding>
@@ -77,10 +75,22 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/decorators/remote-schema.ts">
+        <entry file="file://$PROJECT_DIR$/src/resolvers/StoreQuery/ProductQuery.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="5" selection-start-line="5" selection-end-line="5" />
+            <state relative-caret-position="30">
+              <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/resolvers/MongoQuery/MongoQueryBase.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="7" selection-start-line="7" selection-end-line="7" />
+              <folding>
+                <element signature="e#0#67#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -88,11 +98,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/decorators/mongo-resolver.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+            <state relative-caret-position="330">
+              <caret line="11" column="39" lean-forward="true" selection-start-line="11" selection-start-column="39" selection-end-line="11" selection-end-column="39" />
               <folding>
                 <element signature="e#0#61#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/resolvers/MongoQuery/index.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="30">
+              <caret line="1" column="8" selection-start-line="1" selection-start-column="8" selection-end-line="1" selection-end-column="8" />
             </state>
           </provider>
         </entry>
@@ -135,6 +154,9 @@
       <find>dcut</find>
       <find>remoteap</find>
       <find>@Field(</find>
+      <find>CustomerQuery</find>
+      <find>FieldResolver</find>
+      <find>return {};</find>
     </findStrings>
     <replaceStrings>
       <replace>Store</replace>
@@ -146,7 +168,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/resolvers/PaperfoxQuery/MeQuery.ts" />
         <option value="$PROJECT_DIR$/src/resolvers/models/types.ts" />
         <option value="$PROJECT_DIR$/src/resolvers/types/types.ts" />
         <option value="$PROJECT_DIR$/src/resolvers/AuthMutation.ts" />
@@ -175,7 +196,6 @@
         <option value="$PROJECT_DIR$/src/decorators/env.ts" />
         <option value="$PROJECT_DIR$/tslint.json" />
         <option value="$PROJECT_DIR$/src/entities/mongo/Product.ts" />
-        <option value="$PROJECT_DIR$/src/env.ts" />
         <option value="$PROJECT_DIR$/src/index.ts" />
         <option value="$PROJECT_DIR$/src/mongo.ts" />
         <option value="$PROJECT_DIR$/.env" />
@@ -184,19 +204,21 @@
         <option value="$PROJECT_DIR$/src/entities/ProductCategory.ts" />
         <option value="$PROJECT_DIR$/src/resolvers/StoreQuery/StoreSubQuery.ts" />
         <option value="$PROJECT_DIR$/src/services/JWT.ts" />
-        <option value="$PROJECT_DIR$/src/resolvers/MongoQuery/index.ts" />
         <option value="$PROJECT_DIR$/src/resolvers/StoreMutation/FeedbackMutation.ts" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/src/resolvers/MongoQuery/MongoQuery.ts" />
-        <option value="$PROJECT_DIR$/src/resolvers/MongoQuery/CustomerQuery.ts" />
         <option value="$PROJECT_DIR$/src/resolvers/StoreQuery/ProductQuery.ts" />
         <option value="$PROJECT_DIR$/src/decorators/remote-schema.ts" />
         <option value="$PROJECT_DIR$/src/entities/mongo/Customer.ts" />
-        <option value="$PROJECT_DIR$/src/decorators/mongo-resolver.ts" />
         <option value="$PROJECT_DIR$/src/resolvers/types/input-types.ts" />
-        <option value="$PROJECT_DIR$/src/decorators/remote-api.ts" />
         <option value="$PROJECT_DIR$/src/resolvers/types/object-types.ts" />
+        <option value="$PROJECT_DIR$/src/decorators/remote-api.ts" />
         <option value="$PROJECT_DIR$/src/resolvers/StoreQuery/index.ts" />
+        <option value="$PROJECT_DIR$/src/env.ts" />
+        <option value="$PROJECT_DIR$/src/resolvers/MongoQuery/MongoQueryBase.ts" />
+        <option value="$PROJECT_DIR$/src/resolvers/MongoQuery/CustomerQuery.ts" />
+        <option value="$PROJECT_DIR$/src/decorators/mongo-resolver.ts" />
+        <option value="$PROJECT_DIR$/src/resolvers/MongoQuery/index.ts" />
       </list>
     </option>
   </component>
@@ -219,30 +241,6 @@
             <path>
               <item name="paperfox-node-graphql" type="b2602c69:ProjectViewProjectNode" />
               <item name="paperfox-node-graphql" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="paperfox-node-graphql" type="b2602c69:ProjectViewProjectNode" />
-              <item name="paperfox-node-graphql" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="paperfox-node-graphql" type="b2602c69:ProjectViewProjectNode" />
-              <item name="paperfox-node-graphql" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="decorators" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="paperfox-node-graphql" type="b2602c69:ProjectViewProjectNode" />
-              <item name="paperfox-node-graphql" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="resolvers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="paperfox-node-graphql" type="b2602c69:ProjectViewProjectNode" />
-              <item name="paperfox-node-graphql" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="resolvers" type="462c0819:PsiDirectoryNode" />
-              <item name="types" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -291,6 +289,7 @@
     <configuration name="Debug" type="NodeJSConfigurationType" node-parameters="-r ts-node/register" path-to-js-file="src/index.ts" working-dir="$PROJECT_DIR$">
       <envs>
         <env name="MONGODB_URI" value="mongodb://localhost:27017/store" />
+        <env name="CORP" value="true" />
       </envs>
       <method v="2" />
     </configuration>
@@ -447,11 +446,18 @@
       <option name="project" value="LOCAL" />
       <updated>1548865818917</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="upd">
+      <created>1548888116286</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1548888116286</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="47767000" />
+    <option name="totallyTimeSpent" value="50856000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -468,7 +474,7 @@
     <layout>
       <window_info id="Structure" order="0" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="1" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="2" weight="0.36373508" />
+      <window_info content_ui="combo" id="Project" order="2" weight="0.25135723" />
       <window_info anchor="bottom" id="TypeScript" order="0" />
       <window_info anchor="bottom" id="Docker" order="1" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="2" />
@@ -478,7 +484,7 @@
       <window_info anchor="bottom" id="Event Log" order="6" sideWeight="0.5005429" side_tool="true" weight="0.36923078" />
       <window_info anchor="bottom" id="Message" order="7" />
       <window_info anchor="bottom" id="Find" order="8" weight="0.3289941" />
-      <window_info anchor="bottom" id="Debug" order="9" weight="0.47573966" />
+      <window_info anchor="bottom" id="Debug" order="9" weight="0.4745562" />
       <window_info anchor="bottom" id="Cvs" order="10" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="11" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="12" weight="0.3289941" />
@@ -571,69 +577,9 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/node_modules/typeorm-typedi-extensions/decorators/InjectRepository.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1676">
-          <caret line="3" column="27" lean-forward="true" selection-start-line="3" selection-start-column="27" selection-end-line="3" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/entities/Order.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-591">
-          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
-          <folding>
-            <element signature="e#0#47#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/entities/User.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-151">
-          <folding>
-            <element signature="e#0#88#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="548">
-            <caret line="38" column="31" selection-start-line="38" selection-start-column="31" selection-end-line="38" selection-end-column="31" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/context.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ormconfig.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="7" column="22" lean-forward="true" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/type-graphql/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-351" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/resolvers/MongoQuery/MongoQueryBase.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
-          <folding>
-            <element signature="e#0#67#0" expanded="true" />
-          </folding>
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/mongo.ts">
@@ -646,41 +592,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/resolvers/MongoQuery/index.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="4" selection-start-line="4" selection-end-line="4" />
-          <folding>
-            <element signature="e#0#65#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/resolvers/MongoQuery/CustomerQuery.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="14" selection-start-line="14" selection-end-line="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/@types/node-fetch/index.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="35">
-          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/type-graphql/decorators/Args.d.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="3" column="24" selection-start-line="3" selection-start-column="24" selection-end-line="3" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/resolvers/StoreQuery/ProductQuery.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-626">
-          <caret line="6" selection-start-line="6" selection-end-line="6" />
         </state>
       </provider>
     </entry>
@@ -854,23 +769,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/type-graphql/schema/schema-generator.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="131">
-          <caret line="302" column="68" selection-start-line="302" selection-start-column="68" selection-end-line="302" selection-end-column="68" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/entities/mongo/Customer.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="789">
-          <caret line="30" selection-start-line="30" selection-end-line="30" />
-          <folding>
-            <element signature="e#0#97#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/typescript/lib/lib.es5.d.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="265">
@@ -899,13 +797,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/decorators/remote-schema.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/type-graphql/decorators/Arg.d.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -917,16 +808,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="390">
           <caret line="13" column="30" selection-start-line="13" selection-start-column="30" selection-end-line="13" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/decorators/mongo-resolver.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
-          <folding>
-            <element signature="e#0#61#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -944,23 +825,145 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/decorators/remote-api.ts">
+    <entry file="file://$PROJECT_DIR$/node_modules/@types/node-fetch/index.d.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="394">
-          <caret line="25" column="10" lean-forward="true" selection-start-line="25" selection-start-column="10" selection-end-line="25" selection-end-column="10" />
+        <state relative-caret-position="251">
+          <caret line="33" column="28" selection-start-line="33" selection-start-column="17" selection-end-line="33" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/decorators/seed.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/decorators/env.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="21" selection-start-column="21" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/decorators/remote-schema.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/env.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="4" column="8" selection-start-line="4" selection-start-column="8" selection-end-line="4" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/middleware/auth-middleware.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+          <folding>
+            <element signature="e#0#56#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/@types/graphql/type/scalars.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/entities/mongo/Customer.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="64">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+          <folding>
+            <element signature="e#0#97#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/type-graphql/schema/schema-generator.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="117">
+          <caret line="17" column="16" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resolvers/StoreQuery/ProductQuery.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ormconfig.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="7" column="22" lean-forward="true" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/resolvers/StoreQuery/index.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="47" column="47" lean-forward="true" selection-start-line="47" selection-start-column="47" selection-end-line="47" selection-end-column="47" />
+        <state relative-caret-position="330">
+          <caret line="17" column="33" selection-start-line="17" selection-start-column="33" selection-end-line="17" selection-end-column="33" />
           <folding>
             <element signature="e#0#87#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resolvers/MongoQuery/CustomerQuery.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+          <folding>
+            <element signature="e#0#50#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/decorators/remote-api.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="600">
+          <caret line="20" column="50" lean-forward="true" selection-start-line="20" selection-start-column="50" selection-end-line="20" selection-end-column="50" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/decorators/mongo-resolver.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="11" column="39" lean-forward="true" selection-start-line="11" selection-start-column="39" selection-end-line="11" selection-end-column="39" />
+          <folding>
+            <element signature="e#0#61#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resolvers/MongoQuery/MongoQueryBase.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
+          <folding>
+            <element signature="e#0#67#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resolvers/MongoQuery/index.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="1" column="8" selection-start-line="1" selection-start-column="8" selection-end-line="1" selection-end-column="8" />
         </state>
       </provider>
     </entry>
