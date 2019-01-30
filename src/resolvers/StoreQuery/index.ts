@@ -1,11 +1,14 @@
-import {Arg, Ctx, FieldResolver, ObjectType, Resolver, Root} from "type-graphql";
+import {Arg, Args, Ctx, FieldResolver, ObjectType, Resolver, Root} from "type-graphql";
 import {Context} from "../../context";
 import {ProductQuery} from "./ProductQuery";
 import {MeQuery} from "./MeQuery";
 import {CartQuery} from "./CartQuery";
 import {StoreSubQuery} from "./StoreSubQuery";
-import RemoteApi from "../../decorators/remote-schema";
+import {RemoteApi} from "../../decorators/remote-api";
 import RemoteSchema from "../../decorators/remote-schema";
+import {GraphQLJSON} from "graphql-compose";
+import {SWAPIFilmArgs} from "../types/input-types";
+import {SWAPIFilmResponse} from "../types/object-types";
 
 @ObjectType()
 @Resolver(() => StoreQuery)
@@ -41,14 +44,10 @@ export class StoreQuery {
         return 666;
     }
 
-    @RemoteApi({
-        url: "https://swapi.co/api/people/:id",
+    @RemoteApi((type) => SWAPIFilmResponse, {nullable: true, argType: SWAPIFilmArgs}, {
+        url: "https://swapi.co/api/films/:id/",
     })
-    @FieldResolver((type) => Number, {nullable: true})
-    public async RemoteApi(@Ctx() ctx: Context,
-                           @Arg("id", {nullable: false}) id: number): Promise<any> {
-        return {};
-    }
+    public RemoteApi: any;
 
     @RemoteSchema({
         url: "https://graph.ps.kz/",
@@ -59,6 +58,7 @@ export class StoreQuery {
     @FieldResolver((type) => Number, {nullable: true})
     public async RemoteSchema(@Ctx() ctx: Context,
                               @Arg("id") id: number): Promise<any> {
+        debugger;
         return {};
     }
 }

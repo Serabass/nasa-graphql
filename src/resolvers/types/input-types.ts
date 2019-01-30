@@ -45,6 +45,11 @@ export class SignInArgs {
     @Field() public password: string;
 }
 
+@InputType()
+export class SWAPIFilmArgs {
+    @Field() public id: number;
+}
+
 export interface AuthTokenPayload {
     id: number;
     email: string;

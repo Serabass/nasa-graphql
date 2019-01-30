@@ -40,7 +40,7 @@ export class ProductQuery {
     @FieldResolver(() => [ProductCategory])
     public async categories(
         @Arg("pagination", {nullable: true}) pagination: PaginationArgs,
-    ): Promise<ProductCategory[]> {
+    ) {
         const options = pagination ? {
             ...pagination.skipTakeOptions(),
         } : {};

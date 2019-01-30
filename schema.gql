@@ -47,10 +47,6 @@ type Customer {
 
 type CustomerQuery {
   sandbox: Float!
-  findById: Customer!
-  count: Int!
-  findOne: Customer!
-  findMany: [Customer!]!
 }
 
 # The javascript `Date` as string. Type represents date and time as the ISO Date string.
@@ -185,12 +181,20 @@ type StoreQuery {
   Cart: CartQuery!
   Sub: StoreSubQuery
   num: Float
-  RemoteApi(id: Float!): Float
+  RemoteApi(data: SWAPIFilmArgs!): SWAPIFilmResponse
   RemoteSchema(id: Float!): Float
 }
 
 type StoreSubQuery {
   Products: ProductQuery!
+}
+
+input SWAPIFilmArgs {
+  id: Float!
+}
+
+type SWAPIFilmResponse {
+  title: String!
 }
 
 type User {

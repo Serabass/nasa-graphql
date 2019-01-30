@@ -10,8 +10,6 @@ import {Field, ObjectType} from "type-graphql";
 })
 @ObjectType()
 export class Customer {
-    @indexed
-    @unique
     @Field({nullable: true})
     public _id: number;
 

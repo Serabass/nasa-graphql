@@ -8,6 +8,7 @@ export default function MongoResolver(model) {
     let mongooseTypeComposer = composeWithMongoose(model);
 
     return (target: any) => {
+        return;
         let fields = Reflect.getMetadata(METADATA_KEY, target.prototype);
         let fields2 = Reflect.getMetadata(METADATA_KEY, target.prototype.constructor);
         let baseClass = Object.getPrototypeOf(target);

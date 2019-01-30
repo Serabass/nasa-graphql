@@ -6,3 +6,9 @@ export class AuthPayload {
     public token: string;
     public expiresIn?: number;
 }
+
+@ObjectType()
+export class SWAPIFilmResponse {
+    @Field()
+    public title: string;
+}
