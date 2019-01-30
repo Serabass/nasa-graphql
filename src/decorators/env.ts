@@ -26,7 +26,6 @@ export default class EnvValue {
 
         return (target: any, propertyKey: string | symbol) => {
             let value = cb(process.env[(name || propertyKey) as string]);
-            console.log(name, propertyKey, value);
             Object.defineProperty(target, propertyKey, {
                 value,
                 writable: false,
