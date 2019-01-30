@@ -1,0 +1,63 @@
+paperfox:
+Query
+  Store
+    Products
+      all(pagination: Pagination): ProductSearchResult!
+    Categories
+      all(pagination: Pagination): CategorySearchResult!
+  Me
+    Cabinet
+      Orders
+        cancelOrder(id: ID!): Boolean
+    Cart
+      addProducts(products: [Product]): Cart!
+      removeProducts(products: [Product]): Cart!
+  Admin
+    Orders
+      all(pagination: Pagination!, inputFilter: OrderInputFilter): OrderSearchResult!
+Mutation
+  Store
+    Products
+      createOrder(cart: Cart!): Order! # / buy
+  Me
+    Auth
+      SignIn(payload: AuthPayload!): AuthResultUnion!
+      SignUp(payload: RegisterPayload!): RegisterResult!
+  Admin
+    Orders
+      deleteOrder(id: ID!): Bool
+
+schema:
+
+type AuthResult {
+  token: String!
+}
+
+type AuthError {
+  error: String!
+}
+
+union AuthResultUnion = AuthResult | AuthError
+
+type RegisterResult {
+  ...
+  token: String!
+}
+
+type RegisterError {
+  error: String!
+}
+
+type ProductSearchResult {
+  numFound: Int!
+  page: Int!
+  pageCount: Int!
+  result: [Product]
+}
+
+type CategorySearchResult {
+  numFound: Int!
+  page: Int!
+  pageCount: Int!
+  result: [Category]
+}
