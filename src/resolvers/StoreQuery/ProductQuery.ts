@@ -1,5 +1,4 @@
 import {Arg, FieldResolver, ObjectType, Resolver} from "type-graphql";
-import {InjectRepository as Inject} from "typeorm-typedi-extensions";
 import {Product} from "../../entities/Product";
 import {Repository} from "typeorm";
 import {PaginationArgs} from "../types/input-types";
@@ -9,8 +8,8 @@ import {ProductCategory} from "../../entities/ProductCategory";
 @Resolver(() => ProductQuery)
 export class ProductQuery {
     constructor(
-        @Inject(Product) private readonly products: Repository<Product>,
-        @Inject(ProductCategory) private readonly categoriesRepo: Repository<ProductCategory>,
+        /*@Inject(Product) */private readonly products: Repository<Product>,
+        /*@Inject(ProductCategory) */private readonly categoriesRepo: Repository<ProductCategory>,
     ) {
     }
 
@@ -18,6 +17,7 @@ export class ProductQuery {
         nullable: true,
     })
     public async all(@Arg("pagination", {nullable: true}) pagination: PaginationArgs): Promise<Product[]> {
+        debugger;
         const options = pagination ? {
             ...pagination.skipTakeOptions(),
         } : {};

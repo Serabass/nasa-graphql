@@ -5,15 +5,11 @@ import {CustomerQuery} from "./CustomerQuery";
 import {Context} from "../../context";
 
 @ObjectType()
-@MongoResolver(CustomerModel)
+// @MongoResolver(CustomerModel)
+@Resolver(() => MongoQuery)
 export class MongoQuery {
-    constructor() {
-    }
-
     @FieldResolver(() => CustomerQuery)
     public async Customer(@Ctx() ctx: Context): Promise<any> {
-        debugger;
-        ctx;
         return {};
     }
 }

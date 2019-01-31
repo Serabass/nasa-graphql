@@ -46,7 +46,7 @@ type Customer {
 }
 
 type CustomerQuery {
-  findById(data: JSON!): JSON!
+  findById(id: String!): Customer!
   count(data: JSON!): JSON!
   findOne(data: JSON!): JSON!
   findMany(data: JSON!): JSON!
@@ -162,6 +162,11 @@ type ProductRating {
 type Query {
   Store: StoreQuery
   Mongo: MongoQuery
+  Sandbox: SandboxQuery
+}
+
+type SandboxQuery {
+  num: Int
 }
 
 input SignInArgs {
@@ -186,7 +191,7 @@ type StoreQuery {
   Me: MeQuery!
   Cart: CartQuery!
   Sub: StoreSubQuery
-  num: Float
+  num: Int
   RemoteApi(data: SWAPIFilmArgs!): SWAPIFilmResponse
   RemoteSchema(id: Float!): Float
 }

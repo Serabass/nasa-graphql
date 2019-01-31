@@ -37,5 +37,4 @@ export default class EnvValue {
     public static string = (name?: string) => EnvValue.default(name, (value: string) => value);
     public static boolean = (name?: string) => EnvValue.default(name, (value: string) => value === "true");
     public static number = (name?: string) => EnvValue.default(name, (value: string) => parseFloat(value));
-
 }

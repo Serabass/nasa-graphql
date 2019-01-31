@@ -14,7 +14,7 @@ export default function MongoResolver(model) {
 }
 
 export function MongoFieldResolver(name: string, type: any) {
-    return (target: any, propertyKey: string) => {
+    return (target: any, propertyKey: string, descriptor) => {
 
         target[propertyKey] = () => {
             debugger;
@@ -22,9 +22,13 @@ export function MongoFieldResolver(name: string, type: any) {
             return 123;
         };
 
+        if (descriptor) {
+            descriptor.value = target[propertyKey];
+        }
+
         Reflect.defineMetadata("design:paramtypes", [Object], target, propertyKey);
         Arg("data", () => GraphQLJSON)(target, propertyKey, 1);
-        FieldResolver(() => GraphQLJSON, {})(target, propertyKey, {});
+        FieldResolver(() => GraphQLJSON, {})(target, propertyKey, descriptor);
 
         /*let metaData = Reflect.getMetadata(METADATA_KEY, target);
         debugger;

@@ -1,4 +1,4 @@
-import {Arg, Args, Ctx, FieldResolver, ObjectType, Resolver, Root} from "type-graphql";
+import {Arg, Ctx, FieldResolver, Info, ObjectType, Resolver, Root} from "type-graphql";
 import {Context} from "../../context";
 import {ProductQuery} from "./ProductQuery";
 import {MeQuery} from "./MeQuery";
@@ -8,6 +8,7 @@ import {RemoteApi} from "../../decorators/remote-api";
 import RemoteSchema from "../../decorators/remote-schema";
 import {SWAPIFilmArgs} from "../types/input-types";
 import {SWAPIFilmResponse} from "../types/object-types";
+import {GraphQLInt} from "graphql";
 
 @ObjectType()
 @Resolver(() => StoreQuery)
@@ -38,8 +39,10 @@ export class StoreQuery {
         return {};
     }
 
-    @FieldResolver((type) => Number, {nullable: true})
-    public async num(@Ctx() ctx: Context): Promise<number> {
+    @FieldResolver((type) => GraphQLInt, {nullable: true})
+    public async num(@Ctx() ctx: Context, @Info() info: any): Promise<number> {
+        debugger;
+        info;
         return 666;
     }
 
@@ -49,7 +52,7 @@ export class StoreQuery {
     public RemoteApi: any;
 
     @RemoteSchema({
-        url: "https://endpoint.com/graphql",
+        url: "https://example.com/graphql",
         resolve(data) {
             return data;
         },

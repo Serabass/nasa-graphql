@@ -4,6 +4,7 @@ import {AuthMutation} from "./AuthMutation";
 import {Context} from "../context";
 import {StoreMutation} from "./StoreMutation";
 import {MongoQuery} from "./MongoQuery";
+import {SandboxQuery} from "./SandboxQuery";
 
 class RootQueries {
     @Query((type) => StoreQuery, {nullable: true})
@@ -15,6 +16,12 @@ class RootQueries {
     public async Mongo(@Ctx() ctx: Context): Promise<any> {
         return {};
     }
+
+    @Query((type) => SandboxQuery, {nullable: true})
+    public async Sandbox(@Ctx() ctx: Context): Promise<any> {
+        return {};
+    }
+
 }
 
 class RootMutations {
