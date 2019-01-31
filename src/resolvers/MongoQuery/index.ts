@@ -3,7 +3,6 @@ import {CustomerModel} from "../../entities/mongo/Customer";
 import MongoResolver from "../../decorators/mongo-resolver";
 import {CustomerQuery} from "./CustomerQuery";
 import {Context} from "../../context";
-import {GraphQLJSON} from "graphql-compose";
 
 @ObjectType()
 @MongoResolver(CustomerModel)
@@ -13,6 +12,8 @@ export class MongoQuery {
 
     @FieldResolver(() => CustomerQuery)
     public async Customer(@Ctx() ctx: Context): Promise<any> {
+        debugger;
+        ctx;
         return {};
     }
 }

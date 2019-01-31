@@ -49,7 +49,7 @@ export class StoreQuery {
     public RemoteApi: any;
 
     @RemoteSchema({
-        url: "https://graph.ps.kz/",
+        url: "https://endpoint.com/graphql",
         resolve(data) {
             return data;
         },
