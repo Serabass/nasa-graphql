@@ -52,12 +52,15 @@ type CustomerQuery {
   findMany(data: JSON!): JSON!
 }
 
+# CustomScalar
+scalar CustomScalar
+
 # The javascript `Date` as string. Type represents date and time as the ISO Date string.
 scalar DateTime
 
 type DemoQuery {
+  CustomScalar(val: CustomScalar!): CustomScalar
   OptionalParameter(val: Float): Int
-  ConditionalDefinition(arg: Float!): Int!
   RemoteApi(data: SWAPIFilmArgs!): SWAPIFilmResponse
   RemoteSchema(id: Float!): Float
 }

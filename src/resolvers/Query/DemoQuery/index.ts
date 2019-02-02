@@ -7,11 +7,17 @@ import {SWAPIFilmResponse} from "../../types/object-types";
 import {GraphQLInt} from "graphql";
 import If from "../../../decorators/if";
 import Env from "../../../env";
+import {CustomScalar} from "../../types/scalar-types";
 
 @ObjectType()
 @Resolver(() => DemoQuery)
 export class DemoQuery {
     constructor() {
+    }
+
+    @FieldResolver((type) => CustomScalar, {nullable: true})
+    public async CustomScalar(@Arg("val", () => CustomScalar) val: any): Promise<any> {
+        return val;
     }
 
     @FieldResolver((type) => GraphQLInt, {nullable: true})

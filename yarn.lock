@@ -3320,10 +3320,10 @@ tsutils@^2.27.2:
   dependencies:
     tslib "^1.8.1"
 
-type-graphql@^0.15.0:
-  version "0.15.0"
-  resolved "https://registry.yarnpkg.com/type-graphql/-/type-graphql-0.15.0.tgz#755483d8350635334bb6b71305adbafb0445d04b"
-  integrity sha512-WJbumeTYsycwSqqJQ4cfWXKCh0siApcL2UqR6NKkZPK8PhD4C5fsu00Vohu+Q6+SeDq0f89HxIPQEDSHX5WTJA==
+type-graphql@^0.16.0:
+  version "0.16.0"
+  resolved "https://registry.yarnpkg.com/type-graphql/-/type-graphql-0.16.0.tgz#4d22beffb7ce3f8601e6ad090b4104b7852e5c9d"
+  integrity sha512-rR8cgRB9GuJfv0IFKHQKgfFan8aSlPFtJjMWkdmMY9fmeoJY6IGWm18bev1C1dO4jT9kKXi6Yeese636vakTng==
   dependencies:
     "@types/glob" "^7.1.1"
     "@types/graphql" "^14.0.2"
