@@ -2,12 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0958b9d0-cad8-467c-ad6f-52de88a13a1a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/decorators/ScalarType.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resolvers/types/scalar-types.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jest.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/jwt/index.test.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/schema.gql" beforeDir="false" afterPath="$PROJECT_DIR$/schema.gql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/decorators/remote-api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/decorators/remote-api.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/resolvers/Query/DemoQuery/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/Query/DemoQuery/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/JWT.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/JWT.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -15,6 +16,12 @@
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/paperfox_node_graphql$jest_config_js.info" NAME="jest.config.js Coverage Results" MODIFIED="1549139769443" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="JestJavaScriptTestRunnerCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+  </component>
+  <component name="CoverageViewManager">
+    <option name="myElementSize" value="210" />
   </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
@@ -51,8 +58,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/services/JWT.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="2" selection-start-line="2" selection-end-line="2" />
+            <state relative-caret-position="450">
+              <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
               <folding>
                 <element signature="e#0#36#0" expanded="true" />
               </folding>
@@ -61,10 +68,28 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tests/jwt/index.test.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="30">
+              <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/jest.config.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="510">
+              <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/resolvers/Query/DemoQuery/index.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="95">
-              <caret line="10" selection-start-line="10" selection-end-line="10" />
+            <state relative-caret-position="94">
+              <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
               <folding>
                 <element signature="e#0#87#0" expanded="true" />
               </folding>
@@ -72,67 +97,13 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/decorators/remote-api.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="5" selection-start-line="5" selection-end-line="5" />
+            <state relative-caret-position="60">
+              <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/resolvers/Root.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="64">
-              <caret line="8" selection-start-line="8" selection-end-line="8" />
-              <folding>
-                <element signature="e#0#64#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/decorators/ScalarType.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="3" selection-start-line="3" selection-end-line="3" />
-              <folding>
-                <element signature="e#0#65#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/resolvers/types/scalar-types.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="125">
-              <caret line="13" selection-start-line="13" selection-end-line="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/package.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="184">
-              <caret line="22" column="24" selection-start-line="22" selection-start-column="24" selection-end-line="22" selection-end-column="24" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/index.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="304">
-              <caret line="24" column="29" lean-forward="true" selection-start-line="24" selection-start-column="29" selection-end-line="24" selection-end-column="29" />
-              <folding>
-                <element signature="e#0#33#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -145,6 +116,7 @@
       <list>
         <option value="GraphQL Schema File" />
         <option value="TypeScript File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -194,8 +166,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/entities/ProductComment.ts" />
-        <option value="$PROJECT_DIR$/typings/index.d.ts" />
         <option value="$PROJECT_DIR$/src/resolvers/PaperfoxMutation/FeedbackMutation.ts" />
         <option value="$PROJECT_DIR$/src/resolvers/PaperfoxMutation/ProductMutation.ts" />
         <option value="$PROJECT_DIR$/src/resolvers/PaperfoxMutation/index.ts" />
@@ -215,7 +185,6 @@
         <option value="$PROJECT_DIR$/.env" />
         <option value="$PROJECT_DIR$/src/entities/ProductCategory.ts" />
         <option value="$PROJECT_DIR$/src/resolvers/StoreQuery/StoreSubQuery.ts" />
-        <option value="$PROJECT_DIR$/src/services/JWT.ts" />
         <option value="$PROJECT_DIR$/src/resolvers/StoreMutation/FeedbackMutation.ts" />
         <option value="$PROJECT_DIR$/src/resolvers/MongoQuery/MongoQuery.ts" />
         <option value="$PROJECT_DIR$/src/decorators/remote-schema.ts" />
@@ -236,15 +205,18 @@
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/src/resolvers/StoreQuery/index.ts" />
         <option value="$PROJECT_DIR$/src/resolvers/StoreQuery/CartQuery.ts" />
-        <option value="$PROJECT_DIR$/src/decorators/remote-api.ts" />
         <option value="$PROJECT_DIR$/src/env.ts" />
         <option value="$PROJECT_DIR$/src/resolvers/Root.ts" />
         <option value="$PROJECT_DIR$/src/resolvers/Query/StoreQuery/index.ts" />
         <option value="$PROJECT_DIR$/src/resolvers/types/input-types.ts" />
         <option value="$PROJECT_DIR$/src/decorators/ScalarType.ts" />
-        <option value="$PROJECT_DIR$/src/resolvers/Query/DemoQuery/index.ts" />
         <option value="$PROJECT_DIR$/src/resolvers/types/scalar-types.ts" />
         <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/jest.config.js" />
+        <option value="$PROJECT_DIR$/src/services/JWT.ts" />
+        <option value="$PROJECT_DIR$/tests/jwt/index.test.ts" />
+        <option value="$PROJECT_DIR$/src/resolvers/Query/DemoQuery/index.ts" />
+        <option value="$PROJECT_DIR$/src/decorators/remote-api.ts" />
       </list>
     </option>
   </component>
@@ -284,6 +256,7 @@
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.tslint" value="D:\_dev\php\paperfox\paperfox-node-graphql\node_modules\tslint" />
+    <property name="nodejs.jest.jest_package" value="$PROJECT_DIR$/node_modules/jest" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="yarn" />
@@ -316,7 +289,17 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Node.js.Debug">
+  <component name="RunManager" selected="Jest.jest.config.js">
+    <configuration name="jest.config.js" type="JavaScriptTestRunnerJest" nameIsGenerated="true">
+      <config-file value="$PROJECT_DIR$/jest.config.js" />
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <jest-package value="$PROJECT_DIR$/node_modules/jest" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="ALL" />
+      <method v="2" />
+    </configuration>
     <configuration name="Debug" type="NodeJSConfigurationType" node-parameters="-r ts-node/register" path-to-js-file="src/index.ts" working-dir="$PROJECT_DIR$">
       <envs>
         <env name="MONGODB_URI" value="mongodb://localhost:27017/store" />
@@ -341,6 +324,7 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="Jest.jest.config.js" />
       <item itemvalue="Node.js.Debug" />
       <item itemvalue="Node.js.Seed" />
       <item itemvalue="npm.dev" />
@@ -367,7 +351,8 @@
       <workItem from="1548877795660" duration="7826000" />
       <workItem from="1549084372554" duration="446000" />
       <workItem from="1549084996402" duration="7494000" />
-      <workItem from="1549094858641" duration="15891000" />
+      <workItem from="1549094858641" duration="17555000" />
+      <workItem from="1549137379785" duration="2352000" />
     </task>
     <task id="LOCAL-00001" summary="upd">
       <created>1548627226462</created>
@@ -544,11 +529,50 @@
       <option name="project" value="LOCAL" />
       <updated>1549111318622</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="upd">
+      <created>1549118562516</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1549118562516</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
+  <component name="TestHistory">
+    <history-entry file="All_Tests - 2019.02.03 at 02h 18m 46s.xml">
+      <configuration name="All Tests" configurationId="JavaScriptTestRunnerJest" />
+    </history-entry>
+    <history-entry file="All_Tests - 2019.02.03 at 02h 20m 48s.xml">
+      <configuration name="All Tests" configurationId="JavaScriptTestRunnerJest" />
+    </history-entry>
+    <history-entry file="jest_config_js - 2019.02.03 at 02h 21m 14s.xml">
+      <configuration name="jest.config.js" configurationId="JavaScriptTestRunnerJest" />
+    </history-entry>
+    <history-entry file="jest_config_js - 2019.02.03 at 02h 21m 39s.xml">
+      <configuration name="jest.config.js" configurationId="JavaScriptTestRunnerJest" />
+    </history-entry>
+    <history-entry file="jest_config_js - 2019.02.03 at 02h 22m 09s.xml">
+      <configuration name="jest.config.js" configurationId="JavaScriptTestRunnerJest" />
+    </history-entry>
+    <history-entry file="jest_config_js - 2019.02.03 at 02h 22m 22s.xml">
+      <configuration name="jest.config.js" configurationId="JavaScriptTestRunnerJest" />
+    </history-entry>
+    <history-entry file="jest_config_js - 2019.02.03 at 02h 23m 37s.xml">
+      <configuration name="jest.config.js" configurationId="JavaScriptTestRunnerJest" />
+    </history-entry>
+    <history-entry file="jest_config_js - 2019.02.03 at 02h 24m 01s.xml">
+      <configuration name="jest.config.js" configurationId="JavaScriptTestRunnerJest" />
+    </history-entry>
+    <history-entry file="jest_config_js - 2019.02.03 at 02h 25m 04s.xml">
+      <configuration name="jest.config.js" configurationId="JavaScriptTestRunnerJest" />
+    </history-entry>
+    <history-entry file="jest_config_js - 2019.02.03 at 02h 25m 21s.xml">
+      <configuration name="jest.config.js" configurationId="JavaScriptTestRunnerJest" />
+    </history-entry>
+  </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="84221000" />
+    <option name="totallyTimeSpent" value="88237000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -565,7 +589,7 @@
     <layout>
       <window_info id="Structure" order="0" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="1" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="2" visible="true" weight="0.23181325" />
+      <window_info content_ui="combo" id="Project" order="2" weight="0.23669924" />
       <window_info anchor="bottom" id="TypeScript" order="0" />
       <window_info anchor="bottom" id="Docker" order="1" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="2" />
@@ -582,6 +606,7 @@
       <window_info anchor="bottom" id="Database Console" order="13" weight="0.3289941" />
       <window_info anchor="bottom" id="Messages" order="14" weight="0.3289941" />
       <window_info anchor="bottom" id="Run" order="15" sideWeight="0.49945712" weight="0.44260356" />
+      <window_info anchor="right" id="Coverage" side_tool="true" weight="0.19381107" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -615,7 +640,6 @@
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/node_modules/type-graphql/schema/schema-generator.js</url>
           <line>17</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="18" />
         </line-breakpoint>
       </breakpoints>
@@ -682,13 +706,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/node_modules/@types/mongoose/index.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="116">
-          <caret line="2831" column="4" selection-start-line="2831" selection-start-column="4" selection-end-line="2831" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/db.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
@@ -723,13 +740,6 @@
           <folding>
             <element signature="e#0#97#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/resolvers/Query/MongoQuery/index.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="7" column="3" selection-start-line="7" selection-start-column="3" selection-end-line="7" selection-end-column="3" />
         </state>
       </provider>
     </entry>
@@ -982,13 +992,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/resolvers/types/input-types.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-510">
-          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/type-graphql/metadata/metadata-storage.d.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="660">
@@ -1010,19 +1013,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/services/JWT.ts">
+    <entry file="file://$PROJECT_DIR$/node_modules/type-graphql/package.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/index.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        <state relative-caret-position="574">
+          <caret line="33" lean-forward="true" selection-start-line="33" selection-end-line="33" />
           <folding>
-            <element signature="e#0#36#0" expanded="true" />
+            <element signature="e#0#33#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="22" column="24" selection-start-line="22" selection-start-column="24" selection-end-line="22" selection-end-column="24" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/resolvers/Root.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="64">
+        <state relative-caret-position="30">
           <caret line="8" selection-start-line="8" selection-end-line="8" />
           <folding>
             <element signature="e#0#64#0" expanded="true" />
@@ -1030,23 +1043,51 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/decorators/remote-api.ts">
+    <entry file="file://$PROJECT_DIR$/src/resolvers/types/input-types.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
+        <state relative-caret-position="317">
+          <caret line="46" lean-forward="true" selection-start-line="46" selection-end-line="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/jwt/index.test.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jest.config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/services/JWT.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
           <folding>
-            <element signature="e#0#26#0" expanded="true" />
+            <element signature="e#0#36#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/resolvers/Query/DemoQuery/index.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="10" selection-start-line="10" selection-end-line="10" />
+        <state relative-caret-position="94">
+          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
           <folding>
             <element signature="e#0#87#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resolvers/types/scalar-types.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="334">
+          <caret line="13" selection-start-line="13" selection-end-line="13" />
         </state>
       </provider>
     </entry>
@@ -1060,29 +1101,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/resolvers/types/scalar-types.ts">
+    <entry file="file://$PROJECT_DIR$/src/decorators/remote-api.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="13" selection-start-line="13" selection-end-line="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="22" column="24" selection-start-line="22" selection-start-column="24" selection-end-line="22" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/type-graphql/package.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/index.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="24" column="29" lean-forward="true" selection-start-line="24" selection-start-column="29" selection-end-line="24" selection-end-column="29" />
+        <state relative-caret-position="60">
+          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
           <folding>
-            <element signature="e#0#33#0" expanded="true" />
+            <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -1,4 +1,4 @@
-import {Arg, Ctx, FieldResolver, Info, ObjectType, Resolver, Root} from "type-graphql";
+import {Arg, Ctx, FieldResolver, ObjectType, Resolver} from "type-graphql";
 import {Context} from "../../../context";
 import {RemoteApi} from "../../../decorators/remote-api";
 import RemoteSchema from "../../../decorators/remote-schema";
@@ -32,6 +32,7 @@ export class DemoQuery {
 
     @RemoteApi((type) => SWAPIFilmResponse, {nullable: true, argType: SWAPIFilmArgs}, {
         url: "https://swapi.co/api/films/:id/",
+        method: "GET",
     })
     public RemoteApi: (args: SWAPIFilmArgs) => SWAPIFilmResponse;
 

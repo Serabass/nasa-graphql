@@ -9,12 +9,12 @@ export default class JWT {
 
     public static secret = Env.APP_SECRET;
 
-    public static sign(payload: any, algorithm = this.DEFAULT_ALGO, secret = this.secret): string {
+    public static sign<T = any>(payload: T, {algorithm = this.DEFAULT_ALGO, secret = this.secret}): string {
         // TODO use public and private keys
-        return jwt.sign(payload, secret, { algorithm });
+        return jwt.sign(payload as any, secret, { algorithm });
     }
 
-    public static verify<T = any>(token: string, algorithm = this.DEFAULT_ALGO, secret = this.secret): T {
+    public static verify<T = any>(token: string, {algorithm = this.DEFAULT_ALGO, secret = this.secret}): T {
         // TODO use public and private keys
         return jwt.verify(token, secret, { algorithms: [algorithm] }) as unknown as T;
     }

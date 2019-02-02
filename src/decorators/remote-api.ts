@@ -4,8 +4,10 @@ import {Arg, FieldResolver} from "type-graphql";
 import {GraphQLJSON} from "graphql-compose";
 import fetch, {RequestInit} from "node-fetch";
 
+export type RequestType = "json" | "text" | "blob" | "buffer" | "arrayBuffer" | "textConverted";
+
 export interface RequestInitEx extends RequestInit {
-    type?: "json" | "text" | "blob" | "buffer" | "arrayBuffer" | "textConverted";
+    type?: RequestType;
     url: string;
     resolve?(...args): any;
     prepare?(...args): void;
