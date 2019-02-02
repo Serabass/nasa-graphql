@@ -9,6 +9,7 @@ import RemoteSchema from "../../decorators/remote-schema";
 import {SWAPIFilmArgs} from "../types/input-types";
 import {SWAPIFilmResponse} from "../types/object-types";
 import {GraphQLInt} from "graphql";
+import Corp from "../../decorators/Corp";
 
 @ObjectType()
 @Resolver(() => StoreQuery)
@@ -39,17 +40,15 @@ export class StoreQuery {
         return {};
     }
 
-    @FieldResolver((type) => GraphQLInt, {nullable: true})
+    @Corp.FieldResolver((type) => GraphQLInt, {nullable: true})
     public async num(@Ctx() ctx: Context, @Info() info: any): Promise<number> {
-        debugger;
-        info;
         return 666;
     }
 
     @RemoteApi((type) => SWAPIFilmResponse, {nullable: true, argType: SWAPIFilmArgs}, {
         url: "https://swapi.co/api/films/:id/",
     })
-    public RemoteApi: any;
+    public RemoteApi: (args: SWAPIFilmArgs) => SWAPIFilmResponse;
 
     @RemoteSchema({
         url: "https://example.com/graphql",

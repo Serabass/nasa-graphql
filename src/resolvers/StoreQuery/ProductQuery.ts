@@ -3,13 +3,14 @@ import {Product} from "../../entities/Product";
 import {Repository} from "typeorm";
 import {PaginationArgs} from "../types/input-types";
 import {ProductCategory} from "../../entities/ProductCategory";
+import {InjectRepository} from "typeorm-typedi-extensions";
 
 @ObjectType()
 @Resolver(() => ProductQuery)
 export class ProductQuery {
     constructor(
-        /*@Inject(Product) */private readonly products: Repository<Product>,
-        /*@Inject(ProductCategory) */private readonly categoriesRepo: Repository<ProductCategory>,
+        @InjectRepository(Product) private readonly products: Repository<Product>,
+        @InjectRepository(ProductCategory) private readonly categoriesRepo: Repository<ProductCategory>,
     ) {
     }
 

@@ -1,4 +1,4 @@
-import {Ctx, Mutation, Query} from "type-graphql";
+import {Ctx, Mutation, Query, Subscription} from "type-graphql";
 import {StoreQuery} from "./StoreQuery";
 import {AuthMutation} from "./AuthMutation";
 import {Context} from "../context";
@@ -32,6 +32,15 @@ class RootMutations {
 
     @Mutation((type) => AuthMutation, {nullable: true})
     public async Auth(@Ctx() ctx: Context): Promise<any> {
+        return {};
+    }
+}
+
+class RootSubscriptions {
+    @Subscription((type) => Number, {
+        topics: "sandbox",
+    })
+    public async Sandbox(@Ctx() ctx: Context): Promise<any> {
         return {};
     }
 }

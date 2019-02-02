@@ -200,6 +200,10 @@ type StoreSubQuery {
   Products: ProductQuery!
 }
 
+type Subscription {
+  Sandbox: Float!
+}
+
 input SWAPIFilmArgs {
   id: Float!
 }
