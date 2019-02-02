@@ -190,18 +190,13 @@ type StoreQuery {
   Products: ProductQuery!
   Me: MeQuery!
   Cart: CartQuery!
-  Sub: StoreSubQuery
-  num: Int
+  OptionalParameter(val: Float): Int
   RemoteApi(data: SWAPIFilmArgs!): SWAPIFilmResponse
   RemoteSchema(id: Float!): Float
 }
 
 type StoreSubQuery {
   Products: ProductQuery!
-}
-
-type Subscription {
-  Sandbox: Float!
 }
 
 input SWAPIFilmArgs {

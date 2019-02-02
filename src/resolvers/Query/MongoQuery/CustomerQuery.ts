@@ -1,6 +1,6 @@
 import {Arg, FieldResolver, ObjectType, Resolver} from "type-graphql";
-import {Customer, CustomerModel} from "../../entities/mongo/Customer";
-import MongoResolver, {MongoFieldResolver} from "../../decorators/mongo-resolver";
+import {Customer, CustomerModel} from "../../../entities/mongo/Customer";
+import MongoResolver, {MongoFieldResolver} from "../../../decorators/mongo-resolver";
 import {GraphQLInt} from "graphql";
 
 @ObjectType()

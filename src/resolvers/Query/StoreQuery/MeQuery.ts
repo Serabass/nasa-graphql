@@ -1,11 +1,11 @@
 import {Arg, Authorized, FieldResolver, ObjectType, Resolver} from "type-graphql";
 import {InjectRepository as Inject} from "typeorm-typedi-extensions";
 import {Repository} from "typeorm";
-import {ProductComment} from "../../entities/ProductComment";
-import {User} from "../../entities/User";
-import {CtxUser} from "../../helpers";
-import {Order} from "../../entities/Order";
-import {PaginationArgs} from "../types/input-types";
+import {ProductComment} from "../../../entities/ProductComment";
+import {User} from "../../../entities/User";
+import {CtxUser} from "../../../helpers";
+import {Order} from "../../../entities/Order";
+import {PaginationArgs} from "../../types/input-types";
 
 @ObjectType()
 @Resolver(() => MeQuery)

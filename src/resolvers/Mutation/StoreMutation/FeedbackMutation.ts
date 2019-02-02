@@ -1,6 +1,6 @@
 import {Arg, Authorized, Ctx, FieldResolver, ObjectType, Resolver, Root} from "type-graphql";
-import {Context} from "../../context";
-import {FeedbackInfoArgs} from "../types/input-types";
+import {Context} from "../../../context";
+import {FeedbackInfoArgs} from "../../types/input-types";
 
 @ObjectType()
 @Resolver(() => FeedbackMutation)

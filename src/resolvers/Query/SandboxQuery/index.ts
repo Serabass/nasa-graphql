@@ -1,5 +1,5 @@
 import {Ctx, FieldResolver, Info, ObjectType, Resolver, Root} from "type-graphql";
-import {Context} from "../../context";
+import {Context} from "../../../context";
 import {GraphQLInt} from "graphql";
 
 @ObjectType()

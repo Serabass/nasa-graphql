@@ -1,15 +1,16 @@
 import {Arg, Ctx, FieldResolver, Info, ObjectType, Resolver, Root} from "type-graphql";
-import {Context} from "../../context";
+import {Context} from "../../../context";
 import {ProductQuery} from "./ProductQuery";
 import {MeQuery} from "./MeQuery";
 import {CartQuery} from "./CartQuery";
 import {StoreSubQuery} from "./StoreSubQuery";
-import {RemoteApi} from "../../decorators/remote-api";
-import RemoteSchema from "../../decorators/remote-schema";
-import {SWAPIFilmArgs} from "../types/input-types";
-import {SWAPIFilmResponse} from "../types/object-types";
+import {RemoteApi} from "../../../decorators/remote-api";
+import RemoteSchema from "../../../decorators/remote-schema";
+import {SWAPIFilmArgs} from "../../types/input-types";
+import {SWAPIFilmResponse} from "../../types/object-types";
 import {GraphQLInt} from "graphql";
-import Corp from "../../decorators/Corp";
+import If from "../../../decorators/if";
+import Env from "../../../env";
 
 @ObjectType()
 @Resolver(() => StoreQuery)
@@ -35,14 +36,16 @@ export class StoreQuery {
         return {};
     }
 
-    @FieldResolver((type) => StoreSubQuery, {nullable: true})
+    @If(() => Env.CORP)(FieldResolver((type) => StoreSubQuery, {nullable: true}))
     public async Sub(@Ctx() ctx: Context): Promise<any> {
         return {};
     }
 
-    @Corp.FieldResolver((type) => GraphQLInt, {nullable: true})
-    public async num(@Ctx() ctx: Context, @Info() info: any): Promise<number> {
-        return 666;
+    @FieldResolver((type) => GraphQLInt, {nullable: true})
+    public async OptionalParameter(@Ctx() ctx: Context,
+                                   @Info() info: any,
+                                   @Arg("val", {nullable: true}) val: number = 99): Promise<number> {
+        return val;
     }
 
     @RemoteApi((type) => SWAPIFilmResponse, {nullable: true, argType: SWAPIFilmArgs}, {

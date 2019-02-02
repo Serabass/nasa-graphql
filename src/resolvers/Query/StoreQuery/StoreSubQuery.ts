@@ -1,5 +1,5 @@
 import {Ctx, FieldResolver, ObjectType, Query, Resolver, Root} from "type-graphql";
-import {Context} from "../../context";
+import {Context} from "../../../context";
 import {ProductQuery} from "./ProductQuery";
 
 @ObjectType()

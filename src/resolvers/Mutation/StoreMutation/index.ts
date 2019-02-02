@@ -1,6 +1,6 @@
 import {Ctx, FieldResolver, ObjectType, Resolver, Root} from "type-graphql";
 import {ProductMutation} from "./ProductMutation";
-import {Context} from "../../context";
+import {Context} from "../../../context";
 import {FeedbackMutation} from "./FeedbackMutation";
 
 @ObjectType()

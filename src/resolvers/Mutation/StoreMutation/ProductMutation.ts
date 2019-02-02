@@ -1,8 +1,8 @@
 import {Arg, Authorized, Ctx, FieldResolver, ObjectType, Resolver, Root} from "type-graphql";
 import {InjectRepository as Inject} from "typeorm-typedi-extensions";
-import {Order} from "../../entities/Order";
+import {Order} from "../../../entities/Order";
 import {Repository} from "typeorm";
-import {CartArgs} from "../types/input-types";
+import {CartArgs} from "../../types/input-types";
 
 @ObjectType()
 @Resolver(() => ProductMutation)

@@ -1,10 +1,10 @@
 import {Arg, FieldResolver, ObjectType, Resolver} from "type-graphql";
 import {InjectRepository as Inject} from "typeorm-typedi-extensions";
-import {User} from "../entities/User";
+import {User} from "../../entities/User";
 import {Repository} from "typeorm";
-import {SignInArgs, SignUpArgs} from "./types/input-types";
-import JWT from "../services/JWT";
-import {AuthPayload} from "./types/object-types";
+import {SignInArgs, SignUpArgs} from "../types/input-types";
+import JWT from "../../services/JWT";
+import {AuthPayload} from "../types/object-types";
 
 @ObjectType()
 @Resolver((of) => AuthMutation)
