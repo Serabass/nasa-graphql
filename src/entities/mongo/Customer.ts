@@ -1,5 +1,5 @@
 import {buildSchema, field, indexed, schema, unique, virtuals} from "mongoose-schema-decorators";
-import {Document, model, Model, Mongoose, Schema} from "mongoose";
+import {Document, model, Model, Schema} from "mongoose";
 import {Field, ObjectType} from "type-graphql";
 
 @schema({

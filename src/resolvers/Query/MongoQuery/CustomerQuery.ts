@@ -1,27 +1,34 @@
-import {Arg, FieldResolver, ObjectType, Resolver} from "type-graphql";
+import {Arg, Args, FieldResolver, ObjectType, Resolver} from "type-graphql";
 import {Customer, CustomerModel} from "../../../entities/mongo/Customer";
-import MongoResolver, {MongoFieldResolver} from "../../../decorators/mongo-resolver";
+import MongoResolver from "../../../decorators/mongo-resolver";
 import {GraphQLInt} from "graphql";
+import MongoQueryBase from "./MongoQueryBase";
 
 @ObjectType()
 @MongoResolver(CustomerModel)
 @Resolver(() => CustomerQuery)
-export class CustomerQuery {
-    @FieldResolver(() => Customer)
-    public async findById(@Arg("id") id: string) {
-        return await CustomerModel.findById(id);
+export class CustomerQuery extends MongoQueryBase<any, any> {
+    constructor() {
+        super(CustomerModel);
     }
 
-    @MongoFieldResolver("count", GraphQLInt)
-    public count(id: number): Promise<Customer> {
-        return {} as any;
+    @FieldResolver(() => Customer)
+    public async findById(@Arg("id") id: string): Promise<Customer> {
+        return super.findById(id);
     }
-    @MongoFieldResolver("findOne", Customer)
-    public findOne(id: number): Promise<Customer> {
-        return {} as any;
+
+    @FieldResolver(() => GraphQLInt, {})
+    public count(@Args() conditions: any = {}): Promise<number> {
+        return super.count(conditions);
     }
-    @MongoFieldResolver("findMany", [Customer])
-    public findMany(id: number): Promise<Customer> {
-        return {} as any;
+
+    @FieldResolver(() => Customer, {})
+    public findOne(@Args() conditions: any = {}): Promise<Customer> {
+        return super.findOne(conditions);
+    }
+
+    @FieldResolver(() => [Customer], {})
+    public findMany(@Args() conditions: any = {}): Promise<Customer[]> {
+        return super.findMany(conditions);
     }
 }

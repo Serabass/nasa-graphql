@@ -47,9 +47,9 @@ type Customer {
 
 type CustomerQuery {
   findById(id: String!): Customer!
-  count(data: JSON!): JSON!
-  findOne(data: JSON!): JSON!
-  findMany(data: JSON!): JSON!
+  count: Int!
+  findOne: Customer!
+  findMany: [Customer!]!
 }
 
 # CustomScalar
@@ -61,6 +61,7 @@ scalar DateTime
 type DemoQuery {
   CustomScalar(val: CustomScalar!): CustomScalar
   OptionalParameter(val: Float): Int
+  ConditionalDefinition(arg: Float!): Int!
   RemoteApi(data: SWAPIFilmArgs!): SWAPIFilmResponse
   RemoteSchema(id: Float!): Float
 }
@@ -74,9 +75,6 @@ input FeedbackInfoArgs {
 type FeedbackMutation {
   submit(feedbackInfo: FeedbackInfoArgs!): Boolean!
 }
-
-# The `JSON` scalar type represents JSON values as specified by [ECMA-404](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf).
-scalar JSON
 
 type MeQuery {
   orders(pagination: PaginationArgs): [Order!]!
