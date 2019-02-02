@@ -5,8 +5,14 @@ import {Context} from "../context";
 import {StoreMutation} from "./Mutation/StoreMutation";
 import {MongoQuery} from "./Query/MongoQuery";
 import {SandboxQuery} from "./Query/SandboxQuery";
+import {DemoQuery} from "./Query/DemoQuery";
 
 class RootQueries {
+    @Query((type) => DemoQuery, {nullable: true})
+    public async Demo(@Ctx() ctx: Context): Promise<any> {
+        return {};
+    }
+
     @Query((type) => StoreQuery, {nullable: true})
     public async Store(@Ctx() ctx: Context): Promise<any> {
         return {};

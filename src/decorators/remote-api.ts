@@ -4,10 +4,17 @@ import {Arg, FieldResolver} from "type-graphql";
 import {GraphQLJSON} from "graphql-compose";
 import fetch, {RequestInit} from "node-fetch";
 
+export interface RequestInitEx extends RequestInit {
+    type?: "json" | "text" | "blob" | "buffer" | "arrayBuffer" | "textConverted";
+    url: string;
+    resolve?(...args): any;
+    prepare?(...args): void;
+}
+
 export function RemoteApi(
     returnTypeFuncOrOptions: ReturnTypeFunc | AdvancedOptions,
     maybeOptions: AdvancedOptions & { argType?: any },
-    options: RequestInit & { type?: string, url: string, resolve?: (...args) => any },
+    options: RequestInitEx,
 ): MethodAndPropDecorator {
     if (typeof options.type === "undefined") {
         options.type = "json";
@@ -15,6 +22,11 @@ export function RemoteApi(
 
     if (typeof options.resolve === "undefined") {
         options.resolve = (response) => response;
+    }
+
+    if (typeof options.prepare === "undefined") {
+        options.prepare = (args) => {
+        };
     }
 
     return (prototype, propertyKey, descriptor?) => {
@@ -30,6 +42,18 @@ export function RemoteApi(
                     break;
                 case "text":
                     result = response.text();
+                    break;
+                case "blob":
+                    result = response.blob();
+                    break;
+                case "buffer":
+                    result = response.buffer();
+                    break;
+                case "arrayBuffer":
+                    result = response.arrayBuffer();
+                    break;
+                case "textConverted":
+                    result = response.textConverted();
                     break;
                 default:
                     throw new Error("Under Construction");

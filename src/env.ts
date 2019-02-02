@@ -13,4 +13,7 @@ export default class Env {
 
     @EnvValue.boolean()
     public static CORP: boolean;
+
+    @EnvValue.boolean()
+    public static SHOW_HIDDEN_RESOLVERS: boolean;
 }

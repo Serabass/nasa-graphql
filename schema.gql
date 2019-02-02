@@ -55,6 +55,13 @@ type CustomerQuery {
 # The javascript `Date` as string. Type represents date and time as the ISO Date string.
 scalar DateTime
 
+type DemoQuery {
+  OptionalParameter(val: Float): Int
+  ConditionalDefinition(arg: Float!): Int!
+  RemoteApi(data: SWAPIFilmArgs!): SWAPIFilmResponse
+  RemoteSchema(id: Float!): Float
+}
+
 input FeedbackInfoArgs {
   email: String!
   phone: String!
@@ -160,6 +167,7 @@ type ProductRating {
 }
 
 type Query {
+  Demo: DemoQuery
   Store: StoreQuery
   Mongo: MongoQuery
   Sandbox: SandboxQuery
@@ -190,9 +198,7 @@ type StoreQuery {
   Products: ProductQuery!
   Me: MeQuery!
   Cart: CartQuery!
-  OptionalParameter(val: Float): Int
-  RemoteApi(data: SWAPIFilmArgs!): SWAPIFilmResponse
-  RemoteSchema(id: Float!): Float
+  Sub: StoreSubQuery
 }
 
 type StoreSubQuery {
