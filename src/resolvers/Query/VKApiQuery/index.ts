@@ -23,8 +23,9 @@ export class VKApiQuery {
     private vk: VK;
 
     constructor() {
-        this.vk = new VK();
-        this.vk.token = Env.VK_TOKEN;
+        this.vk = new VK({
+            token: Env.VK_TOKEN,
+        });
     }
 
     @VKAPI<any>(() => [UserResult], {
