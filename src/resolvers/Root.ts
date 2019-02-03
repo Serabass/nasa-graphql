@@ -6,6 +6,7 @@ import {StoreMutation} from "./Mutation/StoreMutation";
 import {MongoQuery} from "./Query/MongoQuery";
 import {SandboxQuery} from "./Query/SandboxQuery";
 import {DemoQuery} from "./Query/DemoQuery";
+import {VKApiQuery} from "./Query/VKApiQuery";
 
 class RootQueries {
     @Query((type) => DemoQuery, {nullable: true})
@@ -25,6 +26,11 @@ class RootQueries {
 
     @Query((type) => SandboxQuery, {nullable: true})
     public async Sandbox(@Ctx() ctx: Context): Promise<any> {
+        return {};
+    }
+
+    @Query((type) => VKApiQuery, {nullable: true})
+    public async VK(@Ctx() ctx: Context): Promise<any> {
         return {};
     }
 

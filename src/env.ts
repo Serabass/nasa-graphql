@@ -11,6 +11,9 @@ export default class Env {
     @EnvValue.string()
     public static MONGODB_URI: string;
 
+    @EnvValue.string()
+    public static VK_TOKEN: string;
+
     @EnvValue.boolean()
     public static CORP: boolean;
 

@@ -1,4 +1,4 @@
-import {Arg, Ctx, FieldResolver, Info, ObjectType, Resolver, Root} from "type-graphql";
+import {Ctx, FieldResolver, ObjectType, Resolver, Root} from "type-graphql";
 import {Context} from "../../../context";
 import {ProductQuery} from "./ProductQuery";
 import {MeQuery} from "./MeQuery";

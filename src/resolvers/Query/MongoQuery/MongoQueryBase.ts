@@ -1,7 +1,7 @@
 import {Document, Model as MongooseModel} from "mongoose";
 
 export default abstract class MongoQueryBase<D extends Document, T extends MongooseModel<D>> {
-    public constructor(public Model: T) {
+    protected constructor(public Model: T) {
     }
 
     public async findById(id: string): Promise<D> {

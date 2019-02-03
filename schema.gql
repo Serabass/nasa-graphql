@@ -47,9 +47,6 @@ type Customer {
 
 type CustomerQuery {
   findById(id: String!): Customer!
-  count: Int!
-  findOne: Customer!
-  findMany: [Customer!]!
 }
 
 # CustomScalar
@@ -172,6 +169,7 @@ type Query {
   Store: StoreQuery
   Mongo: MongoQuery
   Sandbox: SandboxQuery
+  VK: VKApiQuery
 }
 
 type SandboxQuery {
@@ -224,4 +222,18 @@ type User {
   comments: [ProductComment!]!
   orders: [Order!]!
   ratings: [ProductRating!]!
+}
+
+type UserResult {
+  id: Int!
+  first_name: String!
+  last_name: String!
+}
+
+input UsersParams {
+  user_ids: [Int!]!
+}
+
+type VKApiQuery {
+  users(data: UsersParams!): [UserResult!]!
 }
