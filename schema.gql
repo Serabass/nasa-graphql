@@ -45,8 +45,19 @@ type ImageryResponse {
   url: String!
 }
 
+type LocationResponse {
+  location: String!
+}
+
 type MarsPhotosQuery {
   rovers(version: String = "v1"): RoversQuery!
+}
+
+type NASAImagesQuery {
+  search(q: String, center: String, description: String, description_508: String, keywords: String, location: String, media_type: String, nasa_id: String, photographer: String, secondary_creator: String, title: String, year_start: String, year_end: String): SearchResponse!
+  asset(nasaId: String!): SearchResponse!
+  metadata(nasaId: String!): LocationResponse!
+  captions(nasaId: String!): LocationResponse!
 }
 
 type NASAQuery {
@@ -117,6 +128,7 @@ type PlanetaryQuery {
 
 type Query {
   NASA(key: String!): NASAQuery
+  NASAImages: NASAImagesQuery
 }
 
 type RoverQuery {
@@ -126,4 +138,12 @@ type RoverQuery {
 type RoversQuery {
   photos(sol: Float!, roverName: String!): PhotosResponse!
   rover(roverName: String!): RoverQuery!
+}
+
+type SearchCollectionResponse {
+  href: String!
+}
+
+type SearchResponse {
+  collection: SearchCollectionResponse!
 }

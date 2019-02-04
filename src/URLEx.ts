@@ -7,7 +7,9 @@ export default class URLEx extends URL {
         let urlEx = new URLEx(ctx.rootUrl);
         urlEx.pathname = pathname;
 
-        urlEx.searchParams.append("api_key", ctx.API_KEY);
+        if (ctx.API_KEY) {
+            urlEx.searchParams.append("api_key", ctx.API_KEY);
+        }
         if (args) {
             Object.keys(args)
                 .forEach((key) => {
@@ -15,6 +17,7 @@ export default class URLEx extends URL {
                 });
         }
         let url = urlEx.toString();
+        debugger;
         let response = await fetch(url);
         let json = await response.json();
         return json as T;
