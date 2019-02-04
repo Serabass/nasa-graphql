@@ -1,5 +1,6 @@
 {
   "scripts": {
+    "build": "tsc",
     "start": "ts-node src/index.ts",
     "dev": "nodemon"
   },
