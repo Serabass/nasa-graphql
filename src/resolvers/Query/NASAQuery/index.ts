@@ -6,6 +6,7 @@ import {NeoQuery} from "./NeoQuery";
 import {EPICQuery} from "./EPICQuery";
 import {GraphQLInt} from "graphql";
 import {Context} from "../../../context";
+import {TechportQuery} from "./TechportQuery";
 
 @ArgsType()
 class NEOUrlArgs {
@@ -42,6 +43,12 @@ export class NASAQuery {
         path: "/EPIC",
     })
     public EPIC: () => Promise<EPICQuery>;
+
+    @PassNext({
+        type: TechportQuery,
+        path: "/techport",
+    })
+    public techport: () => Promise<TechportQuery>;
 
     @FieldResolver(() => GraphQLInt, {nullable: true})
     public rateLimitRemaining() {

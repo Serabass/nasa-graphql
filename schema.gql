@@ -65,6 +65,7 @@ type NASAQuery {
   marsPhotos: MarsPhotosQuery!
   neo(version: String = "v1"): NeoQuery!
   EPIC: EPICQuery!
+  techport: TechportQuery!
   rateLimitRemaining: Int
   rateLimit: Int
 }
@@ -128,6 +129,25 @@ type PlanetaryQuery {
   earth: EarthQuery!
 }
 
+type Project {
+  lastUpdated: String!
+  id: Float!
+}
+
+type ProjectQuery {
+  projects: TechportProjectResponse!
+}
+
+type ProjectsQuery {
+  projects(updatedSince: String): TechportProjectsResponse!
+  project(id: Float!): ProjectQuery!
+}
+
+type ProjectsResponse {
+  totalCount: Float!
+  projects: [Project!]!
+}
+
 type Query {
   NASA(key: String!): NASAQuery
   NASAImages: NASAImagesQuery
@@ -148,4 +168,20 @@ type SearchCollectionResponse {
 
 type SearchResponse {
   collection: SearchCollectionResponse!
+}
+
+type TechportProjectData {
+  benefits: String!
+}
+
+type TechportProjectResponse {
+  project: TechportProjectData!
+}
+
+type TechportProjectsResponse {
+  projects: ProjectsResponse!
+}
+
+type TechportQuery {
+  projects: ProjectsQuery!
 }
