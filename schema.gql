@@ -3,6 +3,10 @@
 # !!!   DO NOT MODIFY THIS FILE BY YOURSELF   !!!
 # -----------------------------------------------
 
+type ApiQuery {
+  natural: [NaturalResponse!]!
+}
+
 type APODResponse {
   copyright: String!
   date: String!
@@ -29,6 +33,10 @@ type EarthQuery {
   assets(lon: Float!, lat: Float!, begin: String!): AssetsResponse!
 }
 
+type EPICQuery {
+  api: ApiQuery!
+}
+
 type ImageryResponse {
   cloud_score: Float!
   date: String!
@@ -45,6 +53,15 @@ type NASAQuery {
   planetary: PlanetaryQuery!
   marsPhotos: MarsPhotosQuery!
   neo(version: String = "v1"): NeoQuery!
+  EPIC: EPICQuery!
+}
+
+type NaturalResponse {
+  identifier: String!
+  caption: String!
+  image: String!
+  version: String!
+  date: String!
 }
 
 type NeoBrowseResponse {

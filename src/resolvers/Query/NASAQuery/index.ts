@@ -3,6 +3,7 @@ import {PlanetaryQuery} from "./PlanetaryQuery";
 import {PassNext} from "../../../decorators/pass-next";
 import {MarsPhotosQuery} from "./MarsPhotosQuery";
 import {NeoQuery} from "./NeoQuery";
+import {EPICQuery} from "./EPICQuery";
 
 @ArgsType()
 class NEOUrlArgs {
@@ -33,4 +34,10 @@ export class NASAQuery {
         urlArgsType: NEOUrlArgs,
     })
     public neo: () => Promise<NeoQuery>;
+
+    @PassNext({
+        type: EPICQuery,
+        path: "/EPIC",
+    })
+    public EPIC: () => Promise<EPICQuery>;
 }
