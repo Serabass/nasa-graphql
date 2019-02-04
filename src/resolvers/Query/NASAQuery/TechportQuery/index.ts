@@ -1,4 +1,4 @@
-import {ArgsType, Ctx, Field, FieldResolver, ObjectType, Resolver, Root} from "type-graphql";
+import {ObjectType, Resolver} from "type-graphql";
 import {PassNext} from "../../../../decorators/pass-next";
 import {ProjectsQuery} from "./ProjectsQuery";
 
