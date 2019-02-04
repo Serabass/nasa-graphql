@@ -1,5 +1,4 @@
-import {ArgsType, Field, ObjectType, Resolver, Root} from "type-graphql";
-import {PassNext} from "../../../decorators/pass-next";
+import {ArgsType, Field, ObjectType, Resolver} from "type-graphql";
 import {Fetch} from "../../../decorators/fetch";
 
 @ObjectType()

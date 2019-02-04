@@ -1,6 +1,7 @@
 import "reflect-metadata";
 import {Context} from "../context";
 import {Arg, Args, Ctx, FieldResolver, Root} from "type-graphql";
+import * as path from "path";
 
 export interface PassNextOptions {
     type: any;
@@ -10,6 +11,9 @@ export interface PassNextOptions {
 
 export function PassNext(options: PassNextOptions): PropertyDecorator {
     return (target: any, propKey: string) => {
+        let p = Reflect.getMetadata("path", options.type) || "";
+        let fullPath = path.join(p, options.path).replace(/\\/g, "/");
+        Reflect.defineMetadata("path", fullPath, target);
         target[propKey] = (ctx: Context, root: any, args: any) => {
             if (!root.currentPath) {
                 root.currentPath = [];
@@ -25,7 +29,9 @@ export function PassNext(options: PassNextOptions): PropertyDecorator {
         };
 
         let descriptor = Reflect.getOwnPropertyDescriptor(target, propKey);
-        FieldResolver((type) => options.type)(target, propKey, descriptor);
+        FieldResolver((type) => options.type, {
+            description: fullPath,
+        })(target, propKey, descriptor);
         Ctx()(target, propKey, 1);
         Root()(target, propKey, 2);
 

@@ -1,4 +1,4 @@
-import {Arg, Ctx, Query, Root} from "type-graphql";
+import {Arg, Ctx, Query} from "type-graphql";
 import {Context} from "../context";
 import {NASAQuery} from "./Query/NASAQuery";
 import {NASAImagesQuery} from "./Query/NASAImagesQuery";

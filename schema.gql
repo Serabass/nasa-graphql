@@ -34,6 +34,7 @@ type EarthQuery {
 }
 
 type EPICQuery {
+  # /api
   api: ApiQuery!
 }
 
@@ -50,6 +51,7 @@ type LocationResponse {
 }
 
 type MarsPhotosQuery {
+  # /api/:version/rovers
   rovers(version: String = "v1"): RoversQuery!
 }
 
@@ -61,10 +63,19 @@ type NASAImagesQuery {
 }
 
 type NASAQuery {
+  # /planetary
   planetary: PlanetaryQuery!
+
+  # /mars-photos
   marsPhotos: MarsPhotosQuery!
+
+  # /neo/rest/:version
   neo(version: String = "v1"): NeoQuery!
+
+  # /EPIC
   EPIC: EPICQuery!
+
+  # /techport
   techport: TechportQuery!
   rateLimitRemaining: Int
   rateLimit: Int
@@ -126,6 +137,8 @@ type PhotosResponse2 {
 
 type PlanetaryQuery {
   apod(date: String, hd: Boolean): APODResponse!
+
+  # /earth
   earth: EarthQuery!
 }
 
@@ -140,6 +153,8 @@ type ProjectQuery {
 
 type ProjectsQuery {
   projects(updatedSince: String): TechportProjectsResponse!
+
+  # /:id
   project(id: Float!): ProjectQuery!
 }
 
@@ -159,6 +174,8 @@ type RoverQuery {
 
 type RoversQuery {
   photos(sol: Float!, roverName: String!): PhotosResponse!
+
+  # /:roverName
   rover(roverName: String!): RoverQuery!
 }
 
@@ -183,5 +200,6 @@ type TechportProjectsResponse {
 }
 
 type TechportQuery {
+  # /api/projects
   projects: ProjectsQuery!
 }
