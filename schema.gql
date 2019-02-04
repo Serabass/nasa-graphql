@@ -3,237 +3,110 @@
 # !!!   DO NOT MODIFY THIS FILE BY YOURSELF   !!!
 # -----------------------------------------------
 
-type AuthMutation {
-  signUp(input: SignUpArgs!): AuthPayload!
-  signIn(input: SignInArgs!): AuthPayload!
+type APODResponse {
+  copyright: String!
+  date: String!
+  explanation: String!
+  hdurl: String!
+  media_type: String!
+  service_version: String!
+  title: String!
+  url: String!
 }
 
-type AuthPayload {
-  token: String!
+type Asset {
+  id: String!
+  date: String!
 }
 
-type Cart {
-  id: Float
-  items: [CartItem!]
-  sum: Float
-}
-
-input CartArgs {
-  items: [CartItemArgs!]!
-}
-
-type CartItem {
-  id: Float
-  product: Product
-  cart: Cart
-  count: Int
-}
-
-input CartItemArgs {
-  productId: Float!
+type AssetsResponse {
   count: Float!
+  results: [Asset!]!
 }
 
-type CartQuery {
-  getCart(id: String!): Cart!
+type EarthQuery {
+  imagery(lon: Float!, lat: Float!, date: String!, cloud_score: Boolean!): ImageryResponse!
+  assets(lon: Float!, lat: Float!, begin: String!): AssetsResponse!
 }
 
-type Customer {
-  _id: Float
-  name: String
-  createdDate: DateTime
-  getRef: String
+type ImageryResponse {
+  cloud_score: Float!
+  date: String!
+  id: String!
+  service_version: String!
+  url: String!
 }
 
-type CustomerQuery {
-  findById(id: String!): Customer!
+type MarsPhotosQuery {
+  rovers(version: String = "v1"): RoversQuery!
 }
 
-# CustomScalar
-scalar CustomScalar
-
-# The javascript `Date` as string. Type represents date and time as the ISO Date string.
-scalar DateTime
-
-type DemoQuery {
-  CustomScalar(val: CustomScalar!): CustomScalar
-  OptionalParameter(val: Float): Int
-  ConditionalDefinition(arg: Float!): Int!
-  RemoteApi(data: SWAPIFilmArgs!): SWAPIFilmResponse
-  RemoteSchema(id: Float!): Float
+type NASAQuery {
+  planetary: PlanetaryQuery!
+  marsPhotos: MarsPhotosQuery!
+  neo(version: String = "v1"): NeoQuery!
 }
 
-input FeedbackInfoArgs {
-  email: String!
-  phone: String!
-  content: String!
+type NeoBrowseResponse {
+  near_earth_objects: [NEOObject!]!
 }
 
-type FeedbackMutation {
-  submit(feedbackInfo: FeedbackInfoArgs!): Boolean!
+type NeoFeedResponse {
+  element_count: Float!
 }
 
-type MeQuery {
-  orders(pagination: PaginationArgs): [Order!]!
+type NEOObject {
+  neo_reference_id: String!
+  name: String!
 }
 
-type MongoQuery {
-  Customer: CustomerQuery!
+type NeoQuery {
+  feed: NeoFeedResponse!
+  neo(id: Int!): NeoResponse!
+  browse: NeoBrowseResponse!
 }
 
-type Mutation {
-  Store: StoreMutation
-  Auth: AuthMutation
+type NeoResponse {
+  id: String!
+  neo_reference_id: String!
+  name: String!
+  sandbox: String!
 }
 
-type Order {
-  id: Float
-  title: String
-  description: String
-  user: User
-  products: [Product!]!
-
-  # Date Time the order was created
-  createdDate: DateTime
-  updatedDate: DateTime
-}
-
-input PaginationArgs {
-  page: Float!
-  perPage: Float!
-}
-
-type Product {
-  # Product id
+type Photo {
   id: Float!
-
-  # The title of the product
-  title: String!
-
-  # The description of the product
-  description: String!
-
-  # Associated category
-  category: Order!
-  comments: [ProductComment!]!
-  ratings: [ProductRating!]!
-
-  # Product price
-  price: Float!
-  images: [String!]!
+  sol: Float!
+  img_src: String!
 }
 
-type ProductCategory {
-  # Product id
+type Photo2 {
   id: Float!
-
-  # The title of the product
-  title: String!
-
-  # The description of the product
-  description: String!
-
-  # Associated project
-  parent: Order!
-
-  # The list of products
-  products: [Product!]!
+  sol: Float!
+  img_src: String!
 }
 
-type ProductComment {
-  id: ID!
-  content: String!
-  user: User!
-  product: Product!
+type PhotosResponse {
+  photos: [Photo!]!
 }
 
-type ProductMutation {
-  createOrder(cart: CartArgs!): [Order!]!
+type PhotosResponse2 {
+  photos: [Photo2!]!
 }
 
-type ProductQuery {
-  all(pagination: PaginationArgs): [Product!]
-  search(query: String, pagination: PaginationArgs): [Product!]!
-  categories(pagination: PaginationArgs): [ProductCategory!]!
-}
-
-type ProductRating {
-  id: Float
-  product: Product!
-  user: User!
-  value: Float
+type PlanetaryQuery {
+  apod(date: String, hd: Boolean): APODResponse!
+  earth: EarthQuery!
 }
 
 type Query {
-  Demo: DemoQuery
-  Store: StoreQuery
-  Mongo: MongoQuery
-  Sandbox: SandboxQuery
-  VK: VKApiQuery
+  NASA(key: String!): NASAQuery
 }
 
-type SandboxQuery {
-  num: Int
+type RoverQuery {
+  photos(sol: Float, earth_date: String, page: Float = 1, camera: String): PhotosResponse2!
 }
 
-input SignInArgs {
-  email: String!
-  password: String!
-}
-
-input SignUpArgs {
-  firstName: String!
-  lastName: String!
-  password: String!
-  email: String!
-}
-
-type StoreMutation {
-  Product: ProductMutation!
-  Feedback: FeedbackMutation!
-}
-
-type StoreQuery {
-  Products: ProductQuery!
-  Me: MeQuery!
-  Cart: CartQuery!
-  Sub: StoreSubQuery
-}
-
-type StoreSubQuery {
-  Products: ProductQuery!
-}
-
-input SWAPIFilmArgs {
-  id: Float!
-}
-
-type SWAPIFilmResponse {
-  title: String!
-}
-
-type User {
-  id: Float!
-  firstName: String!
-  middleName: String!
-  lastName: String!
-  email: String!
-  password: String!
-  comments: [ProductComment!]!
-  orders: [Order!]!
-  ratings: [ProductRating!]!
-}
-
-type UserResult {
-  id: Int!
-  first_name: String!
-  last_name: String!
-}
-
-input UsersParams {
-  user_ids: [Int!]!
-}
-
-type VKApiQuery {
-  users(data: UsersParams!): [UserResult!]!
+type RoversQuery {
+  photos(sol: Float!, roverName: String!): PhotosResponse!
+  rover(roverName: String!): RoverQuery!
 }

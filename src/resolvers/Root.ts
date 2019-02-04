@@ -1,49 +1,18 @@
-import {Ctx, Mutation, Query, Subscription} from "type-graphql";
-import {StoreQuery} from "./Query/StoreQuery";
-import {AuthMutation} from "./Mutation/AuthMutation";
+import {Arg, Ctx, Query, Root} from "type-graphql";
 import {Context} from "../context";
-import {StoreMutation} from "./Mutation/StoreMutation";
-import {MongoQuery} from "./Query/MongoQuery";
-import {SandboxQuery} from "./Query/SandboxQuery";
-import {DemoQuery} from "./Query/DemoQuery";
-import {VKApiQuery} from "./Query/VKApiQuery";
+import {NASAQuery} from "./Query/NASAQuery";
 
 class RootQueries {
-    @Query((type) => DemoQuery, {nullable: true})
-    public async Demo(@Ctx() ctx: Context): Promise<any> {
-        return {};
+    @Query(() => NASAQuery, {nullable: true})
+    public async NASA(@Ctx() ctx: Context,
+                      @Arg("key") key: string = "tenTCxpvlpJUNfzED5FOJjMo9bjRNMNKkxgBj2Wz"): Promise<any> {
+        ctx.API_KEY = key;
+        ctx.rootUrl = "https://api.nasa.gov";
+        return {
+            currentPath: [],
+        };
     }
-
-    @Query((type) => StoreQuery, {nullable: true})
-    public async Store(@Ctx() ctx: Context): Promise<any> {
-        return {};
-    }
-
-    @Query((type) => MongoQuery, {nullable: true})
-    public async Mongo(@Ctx() ctx: Context): Promise<any> {
-        return {};
-    }
-
-    @Query((type) => SandboxQuery, {nullable: true})
-    public async Sandbox(@Ctx() ctx: Context): Promise<any> {
-        return {};
-    }
-
-    @Query((type) => VKApiQuery, {nullable: true})
-    public async VK(@Ctx() ctx: Context): Promise<any> {
-        return {};
-    }
-
 }
 
 class RootMutations {
-    @Mutation((type) => StoreMutation, {nullable: true})
-    public async Store(@Ctx() ctx: Context): Promise<any> {
-        return {};
-    }
-
-    @Mutation((type) => AuthMutation, {nullable: true})
-    public async Auth(@Ctx() ctx: Context): Promise<any> {
-        return {};
-    }
 }
