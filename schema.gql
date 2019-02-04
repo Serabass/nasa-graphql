@@ -77,8 +77,6 @@ type NASAQuery {
 
   # /techport
   techport: TechportQuery!
-  rateLimitRemaining: Int
-  rateLimit: Int
 }
 
 type NaturalResponse {
@@ -166,6 +164,8 @@ type ProjectsResponse {
 type Query {
   NASA(key: String!): NASAQuery
   NASAImages: NASAImagesQuery
+  rateLimitRemaining: Int
+  rateLimit: Int
 }
 
 type RoverQuery {

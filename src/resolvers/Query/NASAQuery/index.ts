@@ -49,14 +49,4 @@ export class NASAQuery {
         path: "/techport",
     })
     public techport: () => Promise<TechportQuery>;
-
-    @FieldResolver(() => GraphQLInt, {nullable: true})
-    public rateLimitRemaining() {
-        return (global as any).rateLimitRemaining;
-    }
-
-    @FieldResolver(() => GraphQLInt, {nullable: true})
-    public rateLimit() {
-        return (global as any).rateLimit;
-    }
 }

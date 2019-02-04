@@ -1,7 +1,8 @@
-import {Arg, Ctx, Query} from "type-graphql";
+import {Arg, Ctx, FieldResolver, Query} from "type-graphql";
 import {Context} from "../context";
 import {NASAQuery} from "./Query/NASAQuery";
 import {NASAImagesQuery} from "./Query/NASAImagesQuery";
+import {GraphQLInt} from "graphql";
 
 class RootQueries {
     @Query(() => NASAQuery, {nullable: true})
@@ -26,6 +27,16 @@ class RootQueries {
         return {
             currentPath: [],
         };
+    }
+
+    @Query(() => GraphQLInt, {nullable: true})
+    public rateLimitRemaining() {
+        return (global as any).rateLimitRemaining;
+    }
+
+    @Query(() => GraphQLInt, {nullable: true})
+    public rateLimit() {
+        return (global as any).rateLimit;
     }
 }
 
