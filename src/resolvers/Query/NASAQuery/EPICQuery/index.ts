@@ -1,4 +1,4 @@
-import {ArgsType, Field, ObjectType, Resolver, Root} from "type-graphql";
+import {ArgsType, Field, ObjectType, Resolver} from "type-graphql";
 import {ApiQuery} from "./ApiQuery";
 import {PassNext} from "../../../../decorators/pass-next";
 

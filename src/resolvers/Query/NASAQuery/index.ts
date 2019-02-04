@@ -1,9 +1,11 @@
-import {ArgsType, Field, ObjectType, Resolver, Root} from "type-graphql";
+import {ArgsType, Ctx, Field, FieldResolver, ObjectType, Resolver, Root} from "type-graphql";
 import {PlanetaryQuery} from "./PlanetaryQuery";
 import {PassNext} from "../../../decorators/pass-next";
 import {MarsPhotosQuery} from "./MarsPhotosQuery";
 import {NeoQuery} from "./NeoQuery";
 import {EPICQuery} from "./EPICQuery";
+import {GraphQLInt} from "graphql";
+import {Context} from "../../../context";
 
 @ArgsType()
 class NEOUrlArgs {
@@ -40,4 +42,14 @@ export class NASAQuery {
         path: "/EPIC",
     })
     public EPIC: () => Promise<EPICQuery>;
+
+    @FieldResolver(() => GraphQLInt, {nullable: true})
+    public rateLimitRemaining() {
+        return (global as any).rateLimitRemaining;
+    }
+
+    @FieldResolver(() => GraphQLInt, {nullable: true})
+    public rateLimit() {
+        return (global as any).rateLimit;
+    }
 }

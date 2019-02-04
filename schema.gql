@@ -65,6 +65,8 @@ type NASAQuery {
   marsPhotos: MarsPhotosQuery!
   neo(version: String = "v1"): NeoQuery!
   EPIC: EPICQuery!
+  rateLimitRemaining: Int
+  rateLimit: Int
 }
 
 type NaturalResponse {

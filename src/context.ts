@@ -9,4 +9,5 @@ export interface Context {
   url: URLEx;
   pathChunks: string[];
   searchParams: {[key: string]: string};
+  rateLimitRemaining?: number;
 }
