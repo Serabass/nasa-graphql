@@ -4,13 +4,14 @@ import {Container} from "typedi";
 import * as TypeGraphQL from "type-graphql";
 import {GraphQLServer} from "graphql-yoga";
 import {ContextParameters} from "graphql-yoga/dist/types";
-import {buildSchema, GraphQLField} from "graphql";
+import {GraphQLField} from "graphql";
+import {makeExecutableSchema} from "graphql-tools";
 
 dotenv.config();
 
 TypeGraphQL.useContainer(Container);
 
-import { SchemaDirectiveVisitor } from "graphql-tools";
+import {SchemaDirectiveVisitor} from "graphql-tools";
 import * as fs from "fs-extra";
 
 class FetchDirective extends SchemaDirectiveVisitor {
@@ -22,25 +23,25 @@ class FetchDirective extends SchemaDirectiveVisitor {
 
 async function createServer() {
     let source = (await fs.readFile("new-schema.graphqls")).toString("utf-8");
-    const schema = await buildSchema(source);
-    return new GraphQLServer({
-        schema,
+    const schema = await makeExecutableSchema({
+        typeDefs: source,
         directiveResolvers: {
-            upper(
-                next,
-                src,
-                args,
-                context,
-            ) {
+            Fetch(next, src, args, context) {
+                debugger;
                 return next().then((str) => {
                     debugger;
-                    if (typeof(str) === "string") {
-                        return str.toUpperCase();
-                    }
-                    return str;
+                });
+            },
+            PassNext(next, src, args, context) {
+                debugger;
+                return next().then((str) => {
+                    debugger;
                 });
             },
         },
+    });
+    return new GraphQLServer({
+        schema,
         context: async ({request}: ContextParameters) => {
             return {};
         },
@@ -48,7 +49,6 @@ async function createServer() {
 }
 
 async function bootstrap() {
-
     const server = await createServer();
     await server.start({}, (deets) => {
         console.log(`Server is now running on port http://localhost:${deets.port}`);
