@@ -1,14 +1,12 @@
 import * as dotenv from "dotenv";
 import "reflect-metadata";
 import {Container} from "typedi";
-import * as TypeORM from "typeorm";
 import * as TypeGraphQL from "type-graphql";
 import createServer from "./createServer";
 
 dotenv.config();
 
 TypeGraphQL.useContainer(Container);
-TypeORM.useContainer(Container);
 
 async function bootstrap() {
 

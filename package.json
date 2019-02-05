@@ -30,7 +30,8 @@
     "typeorm-seeding": "^1.0.0-beta.6",
     "typeorm-typedi-extensions": "^0.2.1",
     "typescript": "^3.1.6",
-    "vk-io": "^4.0.0-rc.14"
+    "vk-io": "^4.0.0-rc.14",
+    "fs-extra": "latest"
   },
   "devDependencies": {
     "@types/bcryptjs": "^2.4.2",
