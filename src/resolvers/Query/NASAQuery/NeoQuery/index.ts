@@ -18,6 +18,9 @@ class NeoFeedResponse {
     @Field() public element_count: number;
 }
 
+/**
+ * @see https://api.nasa.gov/api.html#NeoWS
+ */
 @ObjectType()
 class NeoResponse {
     @Field() public id: string;

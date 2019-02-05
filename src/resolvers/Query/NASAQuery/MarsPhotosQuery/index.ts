@@ -7,6 +7,9 @@ class RoversArgs {
     @Field({nullable: true}) public version: string = "v1";
 }
 
+/**
+ * @see https://api.nasa.gov/api.html#MarsPhotos
+ */
 @ObjectType()
 @Resolver(() => MarsPhotosQuery)
 export class MarsPhotosQuery {

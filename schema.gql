@@ -28,6 +28,11 @@ type AssetsResponse {
   results: [Asset!]!
 }
 
+type DONKIQuery {
+  IPS(startDate: String, endDate: String): [IPSResponse!]!
+  FLR(startDate: String, endDate: String): [FLRResponse!]!
+}
+
 type EarthQuery {
   imagery(lon: Float!, lat: Float!, date: String!, cloud_score: Boolean!): ImageryResponse!
   assets(lon: Float!, lat: Float!, begin: String!): AssetsResponse!
@@ -38,12 +43,25 @@ type EPICQuery {
   api: ApiQuery!
 }
 
+type ExoplanetsQuery {
+  # /cgi-bin/nstedAPI
+  nsted: NstedAPIQuery!
+}
+
+type FLRResponse {
+  flrID: String
+}
+
 type ImageryResponse {
   cloud_score: Float!
   date: String!
   id: String!
   service_version: String!
   url: String!
+}
+
+type IPSResponse {
+  catalog: String
 }
 
 type LocationResponse {
@@ -74,6 +92,9 @@ type NASAQuery {
 
   # /EPIC
   EPIC: EPICQuery!
+
+  # /DONKI
+  DONKI: DONKIQuery!
 
   # /techport
   techport: TechportQuery!
@@ -111,6 +132,15 @@ type NeoResponse {
   neo_reference_id: String!
   name: String!
   sandbox: String!
+}
+
+type NstedAPIQuery {
+  nph(table: String!, format: String = "json", where: String!): [NstedAPIResponse!]!
+}
+
+type NstedAPIResponse {
+  pl_hostname: String!
+  pl_letter: String!
 }
 
 type Photo {
@@ -164,6 +194,7 @@ type ProjectsResponse {
 type Query {
   NASA(key: String!): NASAQuery
   NASAImages: NASAImagesQuery
+  Exoplanets: ExoplanetsQuery
   rateLimitRemaining: Int
   rateLimit: Int
 }

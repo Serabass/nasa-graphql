@@ -1,12 +1,11 @@
-import {ArgsType, Ctx, Field, FieldResolver, ObjectType, Resolver, Root} from "type-graphql";
+import {ArgsType, Field, ObjectType, Resolver} from "type-graphql";
 import {PlanetaryQuery} from "./PlanetaryQuery";
 import {PassNext} from "../../../decorators/pass-next";
 import {MarsPhotosQuery} from "./MarsPhotosQuery";
 import {NeoQuery} from "./NeoQuery";
 import {EPICQuery} from "./EPICQuery";
-import {GraphQLInt} from "graphql";
-import {Context} from "../../../context";
 import {TechportQuery} from "./TechportQuery";
+import {DONKIQuery} from "./DONKIQuery";
 
 @ArgsType()
 class NEOUrlArgs {
@@ -43,6 +42,12 @@ export class NASAQuery {
         path: "/EPIC",
     })
     public EPIC: () => Promise<EPICQuery>;
+
+    @PassNext({
+        type: DONKIQuery,
+        path: "/DONKI",
+    })
+    public DONKI: () => Promise<DONKIQuery>;
 
     @PassNext({
         type: TechportQuery,

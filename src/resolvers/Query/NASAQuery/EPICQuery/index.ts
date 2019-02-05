@@ -7,6 +7,9 @@ class NEOUrlArgs {
     @Field({nullable: true}) public version: string = "v1";
 }
 
+/**
+ * @see https://api.nasa.gov/api.html#EPIC
+ */
 @ObjectType()
 @Resolver(() => EPICQuery)
 export class EPICQuery {

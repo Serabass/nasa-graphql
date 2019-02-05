@@ -3,6 +3,7 @@ import {Context} from "../context";
 import {NASAQuery} from "./Query/NASAQuery";
 import {NASAImagesQuery} from "./Query/NASAImagesQuery";
 import {GraphQLInt} from "graphql";
+import {ExoplanetsQuery} from "./Query/ExoplanetsQuery";
 
 class RootQueries {
     @Query(() => NASAQuery, {nullable: true})
@@ -24,6 +25,20 @@ class RootQueries {
     public async NASAImages(@Ctx() ctx: Context): Promise<any> {
         // ctx.API_KEY = key;
         ctx.rootUrl = "https://images-api.nasa.gov";
+        return {
+            currentPath: [],
+        };
+    }
+
+    /**
+     * @see https://api.nasa.gov/api.html#images-endpoints
+     * @param ctx
+     * @constructor
+     */
+    @Query(() => ExoplanetsQuery, {nullable: true})
+    public async Exoplanets(@Ctx() ctx: Context): Promise<any> {
+        // ctx.API_KEY = key;
+        ctx.rootUrl = "https://exoplanetarchive.ipac.caltech.edu/";
         return {
             currentPath: [],
         };
